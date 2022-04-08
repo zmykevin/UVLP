@@ -1,0 +1,165 @@
+includes:
+- ./defaults.yaml
+
+model_config:
+  visual_bert:
+    visual_target: null
+    task_matched: false
+    task_visn: false
+    task_mrtm: true
+    visual_losses:
+    - obj
+    - feat
+    use_image_position_embedding: true
+    itm_filtering: false
+    itm_filtering_start_epoch: 2
+
+dataset_config:
+  masked_conceptual_captions_image_phrase:
+      return_features_info: true
+      false_caption: false
+      two_sentence: false
+      use_image_feature_masks: true
+      mrtm_enabled: true
+      features:
+        train:
+        - cc/defaults/features/lmdbs/cc_vinvl_train_0.lmdb
+        - cc/defaults/features/lmdbs/cc_vinvl_train_1.lmdb
+        - cc/defaults/features/lmdbs/cc_vinvl_train_2.lmdb
+        - cc/defaults/features/lmdbs/cc_vinvl_train_3.lmdb
+        - cc/defaults/features/lmdbs/cc_vinvl_train_6.lmdb
+        - cc/defaults/features/lmdbs/cc_vinvl_train_7.lmdb
+        - cc/defaults/features/lmdbs/cc_vinvl_train_8.lmdb
+        - cc/defaults/features/lmdbs/cc_vinvl_train_9.lmdb
+        # train:
+        # - cc/defaults/features/lmdbs/cc_vinvl_train_9.lmdb
+        val:
+        - cc/defaults/features/lmdbs/cc_vinvl_val.lmdb
+        test:
+        - cc/defaults/features/lmdbs/cc_vinvl_val.lmdb
+      annotations:
+        train:
+        - cc/defaults/annotations/train_vinvl_sbert_bc_nps_0.npy
+        - cc/defaults/annotations/train_vinvl_sbert_bc_nps_1.npy
+        - cc/defaults/annotations/train_vinvl_sbert_bc_nps_2.npy
+        - cc/defaults/annotations/train_vinvl_sbert_bc_nps_3.npy
+        - cc/defaults/annotations/train_vinvl_sbert_bc_nps_6.npy
+        - cc/defaults/annotations/train_vinvl_sbert_bc_nps_7.npy
+        - cc/defaults/annotations/train_vinvl_sbert_bc_nps_8.npy
+        - cc/defaults/annotations/train_vinvl_sbert_bc_nps_9.npy
+        # train:
+        # - cc/defaults/annotations/train_vinvl_sbert_retrieved_sorted_all_nps_cs_mini_fixed.npy
+        val:
+        - cc/defaults/annotations/val_vinvl_fixed.npy
+        test:
+        - cc/defaults/annotations/val_vinvl_fixed.npy
+      processors:
+        masked_token_processor:
+          type: masked_token_image_phrase
+          params:
+            tokenizer_config:
+              type: bert-base-uncased
+              params:
+                do_lower_case: true
+            mask_probability: 0.15
+            max_seq_length: 60
+        masked_region_processor:
+          type: masked_region_OMVM
+          params:
+            tokenizer_config:
+              type: bert-base-uncased
+              params:
+                do_lower_case: true
+            mask_probability: 0.15
+            mask_region_probability: 0.9
+  # masked_conceptual_captions_image_phrase:
+  #     return_features_info: true
+  #     false_caption: false
+  #     two_sentence: false
+  #     use_image_feature_masks: true
+  #     mrtm_enabled: true
+  #     features:
+  #       train:
+  #       - cc/defaults/features/lmdbs/cc_vinvl_train_0.lmdb
+  #       - cc/defaults/features/lmdbs/cc_vinvl_train_1.lmdb
+  #       - cc/defaults/features/lmdbs/cc_vinvl_train_2.lmdb
+  #       - cc/defaults/features/lmdbs/cc_vinvl_train_3.lmdb
+  #       - cc/defaults/features/lmdbs/cc_vinvl_train_6.lmdb
+  #       - cc/defaults/features/lmdbs/cc_vinvl_train_7.lmdb
+  #       - cc/defaults/features/lmdbs/cc_vinvl_train_8.lmdb
+  #       - cc/defaults/features/lmdbs/cc_vinvl_train_9.lmdb
+  #       # train:
+  #       # - cc/defaults/features/lmdbs/cc_vinvl_train_9.lmdb
+  #       val:
+  #       - cc/defaults/features/lmdbs/cc_vinvl_val.lmdb
+  #       test:
+  #       - cc/defaults/features/lmdbs/cc_vinvl_val.lmdb
+  #     annotations:
+  #       train:
+  #       - cc/defaults/annotations/train_vinvl_sbert_cc_nps_0.npy
+  #       - cc/defaults/annotations/train_vinvl_sbert_cc_nps_1.npy
+  #       - cc/defaults/annotations/train_vinvl_sbert_cc_nps_2.npy
+  #       - cc/defaults/annotations/train_vinvl_sbert_cc_nps_3.npy
+  #       - cc/defaults/annotations/train_vinvl_sbert_cc_nps_6.npy
+  #       - cc/defaults/annotations/train_vinvl_sbert_cc_nps_7.npy
+  #       - cc/defaults/annotations/train_vinvl_sbert_cc_nps_8.npy
+  #       - cc/defaults/annotations/train_vinvl_sbert_cc_nps_9.npy
+  #       # train:
+  #       # - cc/defaults/annotations/train_vinvl_sbert_retrieved_sorted_all_nps_cs_mini_fixed.npy
+  #       val:
+  #       - cc/defaults/annotations/val_vinvl_fixed.npy
+  #       test:
+  #       - cc/defaults/annotations/val_vinvl_fixed.npy
+
+  #     processors:
+  #       masked_token_processor:
+  #         type: masked_token_image_phrase
+  #         params:
+  #           tokenizer_config:
+  #             type: bert-base-uncased
+  #             params:
+  #               do_lower_case: true
+  #           mask_probability: 0.15
+  #           max_seq_length: 60
+  #       masked_region_processor:
+  #         type: masked_region_OMVM
+  #         params:
+  #           tokenizer_config:
+  #             type: bert-base-uncased
+  #             params:
+  #               do_lower_case: true
+  #           mask_probability: 0.15
+  #           mask_region_probability: 0.9
+
+  
+
+
+optimizer:
+  type: adam_w
+  params:
+    lr: 6e-5
+    eps: 1e-8
+
+scheduler:
+  type: warmup_linear
+  params:
+    num_warmup_steps: 13000
+    num_training_steps: 130000
+
+training:
+  batch_size: 480
+  lr_scheduler: true
+  max_updates: 130000
+  find_unused_parameters: true
+  tensorboard: true
+  clip_gradients: true
+  max_grad_l2_norm: 5.0
+  epoch_aware: false
+
+# evaluation:
+#   metrics:
+#   - accuracy
+
+# multitasking:
+#   enabled: true
+#   type: round_robin

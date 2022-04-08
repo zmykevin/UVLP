@@ -1,0 +1,70 @@
+includes:
+- ./defaults.yaml
+
+model_config:
+  visual_bert:
+    visual_target: null
+
+dataset_config:
+  masked_conceptual_captions:
+    return_features_info: true
+    false_caption: false
+    two_sentence: false
+    features:
+      train:
+      - cc/defaults/features/lmdbs/cc_vinvl_train_0.lmdb
+      - cc/defaults/features/lmdbs/cc_vinvl_train_1.lmdb
+      - cc/defaults/features/lmdbs/cc_vinvl_train_2.lmdb
+      - cc/defaults/features/lmdbs/cc_vinvl_train_3.lmdb
+      - cc/defaults/features/lmdbs/cc_vinvl_train_6.lmdb
+      - cc/defaults/features/lmdbs/cc_vinvl_train_7.lmdb
+      - cc/defaults/features/lmdbs/cc_vinvl_train_8.lmdb
+      - cc/defaults/features/lmdbs/cc_vinvl_train_9.lmdb
+      val:
+      - cc/defaults/features/lmdbs/cc_vinvl_val.lmdb
+      test:
+      - cc/defaults/features/lmdbs/cc_vinvl_val.lmdb
+    annotations:
+      train:
+      - cc/defaults/annotations/train_vinvl_tags_0.npy
+      - cc/defaults/annotations/train_vinvl_tags_1.npy
+      - cc/defaults/annotations/train_vinvl_tags_2.npy
+      - cc/defaults/annotations/train_vinvl_tags_3.npy
+      - cc/defaults/annotations/train_vinvl_tags_6.npy
+      - cc/defaults/annotations/train_vinvl_tags_7.npy
+      - cc/defaults/annotations/train_vinvl_tags_8.npy
+      - cc/defaults/annotations/train_vinvl_tags_9.npy
+      val:
+      - cc/defaults/annotations/val_vinvl.npy
+      test:
+      - cc/defaults/annotations/val_vinvl.npy
+
+    processors:
+      masked_token_processor:
+        type: masked_token
+        params:
+          tokenizer_config:
+            type: bert-base-uncased
+            params:
+              do_lower_case: true
+          mask_probability: 0.15
+          max_seq_length: 60
+
+
+optimizer:
+  type: adam_w
+  params:
+    lr: 6e-5
+    eps: 1e-8
+
+scheduler:
+  type: warmup_linear
+  params:
+    num_warmup_steps: 6560
+    num_training_steps: 65600
+
+training:
+  batch_size: 480
+  lr_scheduler: true
+  max_updates: 65600
+  find_unused_parameters: true

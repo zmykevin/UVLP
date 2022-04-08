@@ -1,0 +1,14 @@
+model_config:
+  clip:
+    text_key: text
+    image_key: image
+    image_encoder:
+      type: clip_image
+      params:
+        is_pretrained: true
+    text_encoder:
+      type: clip_text
+      params:
+        is_pretrained: true
+    losses:
+    - type: contrastive_loss

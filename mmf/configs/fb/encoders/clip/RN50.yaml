@@ -1,0 +1,25 @@
+image:
+  backbone: modified_resnet
+  embed_dim: 1024
+  vision_layers: [3, 4, 6, 3]
+  vision_width: 64
+  vision_patch_size: null
+  image_resolution: 224
+  vision_heads: 32
+  is_pretrained: true
+  pretrained_model:
+    url: https://dl.fbaipublicfiles.com/mmf/data/encoders/clip_image_encoder_RN50.pt
+    hashcode: 4747cb72afbb3e797b8c2a1477c6d3e23cd77eb5d9aa7e09e9a59f2ff95513d6
+    file_name: clip_image_encoder_RN50.pt
+text:
+  embed_dim: 1024
+  vocab_size: 49408
+  context_length: 77
+  transformer_width: 512
+  transformer_layers: 12
+  transformer_heads: 8
+  is_pretrained: true
+  pretrained_model:
+    url: https://dl.fbaipublicfiles.com/mmf/data/encoders/clip_text_encoder_RN50.pt
+    hashcode: 92f66248c3c90bb88620c9c58e9148a7ebd14dcfc623558def98ab88461ab660
+    file_name: clip_text_encoder_RN50.pt

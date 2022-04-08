@@ -1,0 +1,41 @@
+model_config:
+  visual_bert:
+    bert_model_name: bert-base-uncased
+    training_head_type: pretraining
+    visual_embedding_dim: 2048
+    special_visual_initialize: true
+    embedding_strategy: plain
+    bypass_transformer: false
+    output_attentions: false
+    output_hidden_states: false
+    random_initialize: false
+    freeze_base: false
+    finetune_lr_multiplier: 1
+    # Default points to BERT pooler strategy which is to take
+    # representation of CLS token after passing it through a dense layer
+    pooler_strategy: default
+    zerobias: false     # Initialize last layer to predict closer to 0 on init for sigmoid outputs
+    hidden_size : 768
+    hidden_act: gelu #added for mrm
+    layer_norm_eps: 1e-12
+    task_visn: false
+    visn_loss_weight: 6.67
+    visual_losses:
+    - obj
+    - feat
+    visual_loss_config:
+      obj:
+      - 3129 #Needs to be changed
+      - ce
+      - [-1,]
+      - 6.67
+      feat:
+      - 2048
+      - l2
+      - [-1, 2048]
+      - 6.67
+    use_image_position_embedding: false
+    visual_pos_dim: 5
+    task_matched: false
+    itm_filtering: false
+    itm_filtering_start_epoch: 1

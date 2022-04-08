@@ -1,0 +1,11 @@
+includes:
+- ./defaults.yaml
+
+training:
+  use_onbox_dataloader: false
+
+distributed:
+    # NCCL Parameters
+    nccl:
+        nsocks_perthread: 4
+        socket_nthreads: 2

@@ -1,0 +1,88 @@
+model_config:
+  visual_bert:
+    hidden_size: 768
+    hidden_dropout_prob: 0.1
+    training_head_type: itm_flickr30k
+    num_labels: 2
+    use_image_position_embedding: true
+    freeze_base: false
+    losses:
+    - type: cross_entropy
+    #add a temporary term to store output
+    seq_output_path: /fsx/zmykevin/experiments/nmi/mu_vla
+
+dataset_config:
+  itm_flickr30k:
+    data_dir: ${env.data_dir}/datasets
+    return_features_info: true
+    false_caption: true
+    features:
+      train:
+      - flickr30k/defaults/features/vinvl_detectron.lmdb
+      val:
+      - flickr30k/defaults/features/vinvl_detectron.lmdb
+      test:
+      - flickr30k/defaults/features/vinvl_detectron.lmdb
+    annotations:
+      train:
+      - flickr30k/defaults/annotations/flickr30k_itm_train_final.jsonl
+      val:
+      - flickr30k/defaults/annotations/flickr30k_itm_val_final.jsonl
+      test:
+      #- flickr30k/defaults/annotations/flickr30k_itm_test_final.jsonl
+      - flickr30k/defaults/annotations/flickr30k_itm_test.jsonl
+    max_features: 100
+    processors:
+      text_processor:
+        type: bert_tokenizer
+        params:
+          tokenizer_config:
+            type: bert-base-uncased
+            params:
+              do_lower_case: true
+          mask_probability: 0
+          max_seq_length: 60
+      transformer_bbox_processor:
+        type: transformer_bbox
+        params:
+          bbox_key: bbox
+          image_width_key: image_width
+          image_height_key: image_height
+     # Return OCR information
+    use_ocr: false
+    # Return spatial information of OCR tokens if present
+    use_ocr_info: false
+
+
+optimizer:
+  type: adam_w
+  params:
+    lr: 5e-5
+    eps: 1e-8
+
+scheduler:
+  type: warmup_linear
+  params:
+    num_warmup_steps: 1000
+    num_training_steps: 10000
+
+evaluation:
+  metrics:
+  - accuracy
+
+training:
+  # batch_size: 480
+  batch_size: 32
+  lr_scheduler: true
+  clip_gradients: true
+  max_grad_l2_norm: 2.0
+  # Don't forget to update schedule_attributes if you update this
+  find_unused_parameters: true
+  max_updates: 10000
+  early_stop:
+    criteria: itm_flickr30k/accuracy
+    minimize: false
+
+checkpoint:
+  pretrained_state_mapping:
+    model.bert: model.bert

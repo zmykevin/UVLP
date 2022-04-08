@@ -1,0 +1,45 @@
+dataset_config:
+  refcoco:
+    data_dir: ${env.data_dir}/datasets
+    depth_first: false
+    fast_read: false
+    use_images: false
+    use_features: true
+    # zoo_requirements:
+    # - coco.defaults
+    features:
+      train:
+      - vqa2/defaults/features/trainval2014_vinvl_nopadding.lmdb
+      val:
+      - vqa2/defaults/features/trainval2014_vinvl_nopadding.lmdb
+      test:
+      - vqa2/defaults/features/trainval2014_vinvl_nopadding.lmdb
+    annotations:
+      train:
+      - refcoco/defaults/annotations/refcoco_plus_train.jsonl
+      val:
+      - refcoco/defaults/annotations/refcoco_plus_dev.jsonl
+      test:
+      - refcoco/defaults/annotations/refcoco_plus_testA.jsonl
+    max_features: 100
+    processors:
+      text_processor:
+        type: vocab
+        params:
+          max_length: 14
+          vocab:
+            type: intersected
+            embedding_name: glove.6B.300d
+            vocab_file: vocabs/vocabulary_100k.txt
+          preprocessor:
+            type: simple_sentence
+            params: {}
+      bbox_processor:
+        type: bbox
+        params:
+          max_length: 50
+    return_features_info: false
+    # Return OCR information
+    use_ocr: false
+    # Return spatial information of OCR tokens if present
+    use_ocr_info: false

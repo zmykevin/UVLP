@@ -1,0 +1,111 @@
+includes:
+- configs/models/mmf_transformer/defaults.yaml
+# Please see fbcode/faim/mmf/mmf/datasets/fb/builders/hive/builder.py
+# for details on configuration
+
+model_config:
+  mmf_transformer:
+    direct_features_input: true
+    modalities:
+    - type: text
+      key: ocr_text
+      segment_id: 0
+    - type: text
+      key: body_text
+      segment_id: 1
+    - type: text
+      key: title_text
+      segment_id: 2
+    - type: image
+      key: image
+      embedding_dim: 256
+      position_dim: 1
+      segment_id: 3
+    image_encoder:
+      type: identity
+      params:
+        in_dim: 256
+    num_labels: 56
+    losses:
+    - cross_entropy
+
+dataset_config:
+  hive:
+    constructor:
+      namespace: si
+      table: dim_ci_img_url_05232020_valid_new_with_val
+      partitions: null
+    set_name_key: set_name
+    set_name_mapping:
+      train: train
+      val: val
+      test: test
+    schema:
+    - post_id
+    - label
+    - xray_bool
+    - body_text
+    - title_text
+    - ocr_text
+    - user_text
+    filters: []
+    processors:
+      batch_processor:
+        type: multiclass_features_with_text
+        params:
+          feature_key: xray_bool
+          text_keys:
+          - ocr_text
+          - body_text
+          - title_text
+          label_key: label
+          id_key: post_id
+          processors:
+            text_processor:
+              type: multi_sentence_bert_tokenizer
+              params:
+                tokenizer_config:
+                  type: bert-base-uncased
+                  params:
+                    do_lower_case: true
+                mask_probability: 0
+                max_seq_length: 128
+                fusion: stack
+            feature_processor:
+              type: xray_hash
+              params: {}
+            label_processor:
+              type: multi_class_from_file
+              params:
+                vocab_file: /mnt/vol/gfsai-oregon/ai-group/users/asg/data/wpie_violations/classes.txt
+
+scheduler:
+  type: warmup_linear
+  params:
+    num_warmup_steps: 2000
+    num_training_steps: ${training.max_updates}
+
+optimizer:
+  type: adam_w
+  params:
+    lr: 1e-5
+    eps: 1e-8
+
+evaluation:
+    metrics:
+    - micro_ap
+    - accuracy
+
+training:
+  batch_size: 32
+  lr_scheduler: true
+  max_updates: 22000
+  early_stop:
+    criteria: hive/micro_ap
+    minimize: false
+
+checkpoint:
+  pretrained_state_mapping:
+    pooler: pooler
+    backend.transformer: backend.transformer
+    backend.embeddings: backend.embeddings

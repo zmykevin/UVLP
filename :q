@@ -1,0 +1,1201 @@
+[33mcommit 0779021c0a7d5985a212724968e811e613d43c41[m[33m ([m[1;36mHEAD -> [m[1;32mmingyang_round_and_robin[m[33m, [m[1;31morigin/mingyang_round_and_robin[m[33m)[m
+Author: mingyang <zmy9108@gmail.com>
+Date:   Fri Aug 13 08:31:20 2021 +0000
+
+    edit the yaml file
+
+[33mcommit 149149e9b5ce89596dfd94a45be90842a04bcc7d[m
+Merge: 77655ecf d3ba343e
+Author: mingyang <zmy9108@gmail.com>
+Date:   Fri Aug 13 07:33:48 2021 +0000
+
+    update visual_bert.py
+
+[33mcommit d3ba343ea2605cbd734788f17051a6afeee22073[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m)[m
+Author: mingyang <zmy9108@gmail.com>
+Date:   Thu Aug 12 22:36:48 2021 +0000
+
+    update the ve and vqa finetuning
+
+[33mcommit 77655ecf76418c30c64c9060036d35625a69930e[m
+Author: mingyang <zmy9108@gmail.com>
+Date:   Thu Aug 12 20:49:01 2021 +0000
+
+    update the visual_bert for round_and_robin
+
+[33mcommit 2dd12ac58006a03cb4c41d991795f1cc4c8f28c3[m
+Merge: 44f9d158 73888d4f
+Author: mingyang <zmy9108@gmail.com>
+Date:   Thu Aug 12 07:45:54 2021 +0000
+
+    merge the update from master branch
+
+[33mcommit 73888d4f67be0f1d8676c34965eb15dc39aa2ff8[m
+Author: mingyang <zmy9108@gmail.com>
+Date:   Thu Aug 12 07:28:24 2021 +0000
+
+    update the sweep finetuning
+
+[33mcommit cc5e18b94aafbaa0b989dfd51d7c1c947358466a[m
+Author: mingyang <zmy9108@gmail.com>
+Date:   Wed Aug 11 23:32:14 2021 +0000
+
+    update the vqa_finetuning
+
+[33mcommit 12b422aa6e99d83470c798839efb50ba0b49c75f[m
+Author: mingyang <zmy9108@gmail.com>
+Date:   Wed Aug 11 23:19:19 2021 +0000
+
+    update the CLIP_score.py
+
+[33mcommit 45dae7fe9b3dcbb0b237d6e31090307ea2fabafb[m
+Author: mingyang <zmy9108@gmail.com>
+Date:   Wed Aug 11 20:45:09 2021 +0000
+
+    update the test config
+
+[33mcommit 44f9d158b9f8a3f75353918dbb17e6d081458315[m
+Author: mingyang <zmy9108@gmail.com>
+Date:   Wed Aug 11 19:44:52 2021 +0000
+
+    change the visual bert accordingly for round_and_robin
+
+[33mcommit 55893b8999f73884203791ae6c0bcc837d13cd54[m
+Merge: 535c24df 1c73dfaf
+Author: mingyang <zmy9108@gmail.com>
+Date:   Wed Aug 11 09:10:24 2021 +0000
+
+    update with the master branch
+
+[33mcommit 1c73dfafc26461b928bac61e4233367b54328914[m
+Author: mingyang <zmy9108@gmail.com>
+Date:   Wed Aug 11 09:07:01 2021 +0000
+
+    add viual_entailment finetuning to visual bert with vinvl features
+
+[33mcommit 293532b94f3f228ca116c8d6faa3033498108bdd[m
+Author: mingyang <zmy9108@gmail.com>
+Date:   Wed Aug 11 08:36:36 2021 +0000
+
+    Prepare Visual Entailment Data
+
+[33mcommit 535c24dfd03276531d05f3847a46da6b3102f2d9[m
+Author: mingyang <zmy9108@gmail.com>
+Date:   Tue Aug 10 21:12:39 2021 +0000
+
+    update the vqa fine-tuning
+
+[33mcommit 604d3701d89ed06e4f46a63e94559b900a0e25ef[m
+Author: mingyang <zmy9108@gmail.com>
+Date:   Tue Aug 10 06:36:51 2021 +0000
+
+    finish implementing the round_and_robin on lxmert base
+
+[33mcommit 29ad6c85daa1f9ba1504c44ca75f7b59e2f820cb[m
+Author: mingyang <zmy9108@gmail.com>
+Date:   Sun Aug 8 23:54:28 2021 +0000
+
+    Debug the uvisual_bert model with VQA loss
+
+[33mcommit 0b92f0364e59fce27a340b611169b3bd5a3f6a86[m
+Merge: 195349f7 2924f1bb
+Author: mingyang <zmy9108@gmail.com>
+Date:   Sun Aug 8 09:54:04 2021 +0000
+
+    merge master
+
+[33mcommit 2924f1bbb8b1d006000d0074fa954bddff7d0d95[m
+Author: mingyang <zmy9108@gmail.com>
+Date:   Sun Aug 8 09:48:03 2021 +0000
+
+    launch pretraining
+
+[33mcommit 195349f70ed6545aa7dd85805fe4b4b8f85bd393[m
+Merge: 12a2afc8 5e4dca98
+Author: mingyang <zmy9108@gmail.com>
+Date:   Sun Aug 8 09:23:15 2021 +0000
+
+    prepare vqa fine-tuning
+
+[33mcommit 5e4dca9816e526c9ac8ce6ba5351e250ac74bb99[m
+Author: mingyang <zmy9108@gmail.com>
+Date:   Sun Aug 8 08:59:22 2021 +0000
+
+    update the uvisual_bert configs
+
+[33mcommit bd25b6d50268406349b5ca381a348f39cdc02813[m
+Author: mingyang <zmy9108@gmail.com>
+Date:   Sun Aug 8 02:04:42 2021 +0000
+
+    test commitment
+
+[33mcommit 12a2afc89b9cc6d3d70c63504c2777ab6a5b3508[m
+Author: mingyang <zmy9108@gmail.com>
+Date:   Sat Aug 7 09:35:45 2021 +0000
+
+    Adapt the implementation from Original VisualBert to the MMF Version
+
+[33mcommit b947cbb36bf0c470479191999f17b427685bc6d4[m
+Author: mingyang <zmy9108@gmail.com>
+Date:   Sat Aug 7 08:37:52 2021 +0000
+
+    update the pretrain
+
+[33mcommit 5decb6cf22e091a5fff7990a9a925bd31d955271[m
+Author: mingyang <zmy9108@gmail.com>
+Date:   Fri Aug 6 22:54:45 2021 +0000
+
+    Update the Embeddings of the Unsupervised Visual Bert
+
+[33mcommit 5cf20c15761887a5b49d814907f5319fb7b371f1[m
+Merge: c4f036ca b8c310a7
+Author: mingyang <zmy9108@gmail.com>
+Date:   Fri Aug 6 22:15:02 2021 +0000
+
+    update the unsupervised visual bert
+
+[33mcommit b8c310a7bea946c032e1cd3d22cf0c607a7f3c27[m
+Author: mingyang <zmy9108@gmail.com>
+Date:   Fri Aug 6 18:36:12 2021 +0000
+
+    update slurm for new clusters
+
+[33mcommit c4f036ca7d7cddf72913a82e935fdada14da9013[m
+Merge: dd62b7cb a30591ae
+Author: mingyang <zmy9108@gmail.com>
+Date:   Fri Aug 6 17:16:54 2021 +0000
+
+    round and robin implementation to redefine the model
+
+[33mcommit a30591ae31612b189dc25c89bcd80e3c0c1de96e[m
+Author: mingyang <zmy9108@gmail.com>
+Date:   Thu Aug 5 18:50:40 2021 +0000
+
+    update the pretrianing for sbert sentences and object lists
+
+[33mcommit dd62b7cb5838afb116baf0c58092560973104388[m
+Author: mingyang <zmy9108@gmail.com>
+Date:   Thu Aug 5 09:06:03 2021 +0000
+
+    update visual bert for round and robin
+
+[33mcommit d50af4d32339dfb89c7c49aad91d63da231ca5bd[m
+Author: mingyang <zmy9108@gmail.com>
+Date:   Tue Aug 3 22:33:54 2021 +0000
+
+    minor update
+
+[33mcommit a43c21b0ffa6346985ce1ceb11e7430a19c6a460[m
+Author: mingyang <zmy9108@gmail.com>
+Date:   Tue Aug 3 06:49:36 2021 +0000
+
+    compute the retrieved captions using filtered object list
+
+[33mcommit baf75ccf5c8f74c9f2fb534cc859338652cc9d26[m[33m ([m[1;31morigin/mingyang_text_cc_pretraining[m[33m, [m[1;32mmingyang_text_cc_pretraining[m[33m)[m
+Author: mingyang <zmy9108@gmail.com>
+Date:   Sat Jul 31 22:53:12 2021 +0000
+
+    Set up the text-only pretraining
+
+[33mcommit 99ce35843f56951c095b4e23a6f73b1ae0d42211[m
+Author: mingyang <zmy9108@gmail.com>
+Date:   Fri Jul 30 23:26:31 2021 +0000
+
+    implement text-only pretraining
+
+[33mcommit d56a880967ec9b60c522ee379b4f6663458acc30[m
+Author: mingyang <zmy9108@gmail.com>
+Date:   Fri Jul 30 22:04:43 2021 +0000
+
+    Visualize the Retrieved Captions
+
+[33mcommit 6e16c1ea40e8976ef68215159a72ad17652544a6[m
+Author: mingyang <zmy9108@gmail.com>
+Date:   Tue Jul 27 18:16:09 2021 +0000
+
+    add clip score and implement the new retrieval method
+
+[33mcommit b1a650869e91b507557a74b4c38c747abf7eb30c[m
+Author: mingyang <zmy9108@gmail.com>
+Date:   Wed Jul 21 08:17:15 2021 +0000
+
+    update the code to prepare cc and implement tf-idf to retrieve similar sentence from object lists
+
+[33mcommit 9f8ada89f8163bd678cba948181605ed921eb176[m
+Author: mingyang <zmy9108@gmail.com>
+Date:   Wed Jul 14 23:51:08 2021 +0000
+
+    update the pretraining configs
+
+[33mcommit ed5037e2623125eedc9f4ba46b621246b0f45618[m
+Author: mingyang <zmy9108@gmail.com>
+Date:   Tue Jul 13 23:37:56 2021 +0000
+
+    create the code to convert vinvl features for CC
+
+[33mcommit 0d85c88955b08d3b876d2c53135be53829478431[m
+Author: mingyang <zmy9108@gmail.com>
+Date:   Tue Jul 13 22:31:54 2021 +0000
+
+    fix the test data generation for test vqa
+
+[33mcommit d5769cdd546ed3df73d1b3145ef298de8cfd30c6[m
+Author: mingyang <zmy9108@gmail.com>
+Date:   Tue Jul 13 06:52:36 2021 +0000
+
+    update the vqa evaluation code
+
+[33mcommit cf778e2c9f68a2e161260d2af91c2a500734997b[m
+Author: mingyang <zmy9108@gmail.com>
+Date:   Fri Jul 9 21:17:16 2021 +0000
+
+    normalize the bbox as specified in mmf
+
+[33mcommit 1b56cf1cc1238eef7e1b14c621cc35a654ffc690[m
+Author: mingyang <zmy9108@gmail.com>
+Date:   Fri Jul 9 09:16:10 2021 +0000
+
+    adjust the sweep setting
+
+[33mcommit 9106ad84d2c9bc8d62ace2bc4f75e89e533f88ff[m
+Author: mingyang <zmy9108@gmail.com>
+Date:   Fri Jul 9 09:04:31 2021 +0000
+
+    update the data_explorer
+
+[33mcommit 867ef34b10d16ed4ee5533579ff6e555bdc3f81f[m
+Author: Jun Chen <junchen20@fb.com>
+Date:   Wed Jul 7 13:34:32 2021 -0700
+
+    [MMF] fix freeze_base in unimodal image model (#1006)
+    
+    Summary:
+    Pull Request resolved: https://github.com/facebookresearch/mmf/pull/1006
+    
+    `freeze_base` is not used in MMF unimodal image model so we can't train an image model with fixed trunk.
+    
+    Reviewed By: apsdehal
+    
+    Differential Revision: D29524453
+    
+    fbshipit-source-id: ba8023b9b987d48e3612aaa46b2d30c5e71fb019
+
+[33mcommit f154b54ffd21df65d885807c5e6a8d2f692aaad7[m
+Author: Vedanuj Goswami <vedanujg@gmail.com>
+Date:   Wed Jun 30 14:14:48 2021 -0700
+
+    [feat] ITM Loss (#961)
+    
+    Summary:
+    PR adds Image-text matching loss to MMF. The loss can be used standalone or with the MMFTransformer as a head.
+    
+    Addresses https://github.com/facebookresearch/mmf/issues/947 #466
+    
+    - Adds ITM loss
+    - Fixes ITM loss for validation dataset
+    - Adds config for COCO ITM loss
+    - Adds tests for ITM loss
+    
+    Pull Request resolved: https://github.com/facebookresearch/mmf/pull/961
+    
+    Test Plan:
+    Imported from GitHub, without a `Test Plan:` line.
+    
+    Pass tests
+    
+    Reviewed By: apsdehal
+    
+    Differential Revision: D28925014
+    
+    Pulled By: vedanuj
+    
+    fbshipit-source-id: d123468f746820e1412380384dd15c5ebed15887
+
+[33mcommit eb949616ecf281c9901e45320f3e290b062f1f1a[m
+Author: Shaoliang Nie <snie@fb.com>
+Date:   Wed Jun 30 13:17:24 2021 -0700
+
+    [Fix][Hateful memes fine grained] Fix dataset yaml file format
+    
+    Summary: Default format requires a "version" and "resource" field.
+    
+    Reviewed By: vedanuj
+    
+    Differential Revision: D29493693
+    
+    fbshipit-source-id: ac519b48b909a6e3b13fbc70a7e55ddfe6c623ed
+
+[33mcommit bd59e80a6f3668c3204745da255e7e6bfbea3a3d[m
+Author: Sasha Sheng <sash@fb.com>
+Date:   Tue Jun 29 14:13:48 2021 -0700
+
+    [fix] black and isort (#991)
+    
+    Summary: Pull Request resolved: https://github.com/facebookresearch/mmf/pull/991
+    
+    Reviewed By: vedanuj
+    
+    Differential Revision: D29448673
+    
+    Pulled By: ytsheng
+    
+    fbshipit-source-id: f60d39fee67e331e09314e4f644b03dde1d50caf
+
+[33mcommit 51eeab6602b98fa7db1adb6b9fd5dc9be9e8cb9b[m
+Author: Sasha Sheng <sash@fb.com>
+Date:   Mon Jun 28 14:25:29 2021 -0700
+
+    [feat][clip] minor clip update for processor, model and loss
+    
+    Summary:
+    * make clip_text_processor to be more generic
+    * avoid using /=
+    * add temperature to the model
+    
+    Reviewed By: vedanuj
+    
+    Differential Revision: D29384557
+    
+    fbshipit-source-id: 8b16081fc18a0978aee959640fe063bba741c884
+
+[33mcommit 52fec226e3d087c6d34e2a33d6532c656116e571[m
+Author: Amanpreet Singh <asg@fb.com>
+Date:   Mon Jun 28 14:09:43 2021 -0700
+
+    [mmf,fix] Support OC 2.1; fix internal tests
+    
+    Summary: Fixes the final internal test that is failing.
+    
+    Reviewed By: ytsheng
+    
+    Differential Revision: D29406286
+    
+    fbshipit-source-id: 6003cc01036a736a971abd5b11eae6a6b67fdc63
+
+[33mcommit e1910ae9db88aa9c1ac603ab6f22a11f80b63dad[m
+Author: Vedanuj Goswami <vedanujg@gmail.com>
+Date:   Mon Jun 28 11:31:07 2021 -0700
+
+    [chores] PT upgrade (#987)
+    
+    Summary:
+    Upgrade to PT 1.9, torchvision 0.10, torchaudio 0.9
+    
+    Pull Request resolved: https://github.com/facebookresearch/mmf/pull/987
+    
+    Reviewed By: ytsheng
+    
+    Differential Revision: D29415991
+    
+    Pulled By: vedanuj
+    
+    fbshipit-source-id: dc4bec0a6f2a05702e1601bf816acb95de2471c0
+
+[33mcommit a278da95d2a0d033c6e5e5620b998f47122223dc[m
+Author: Sasha Sheng <sash@fb.com>
+Date:   Fri Jun 25 18:06:13 2021 -0700
+
+    [fix] oss and fbcode pytorch lightning version sync (#979)
+    
+    Summary:
+    tests passed.
+    188 passed, 175 warnings in 838.33s (0:13:58)
+    
+    Pull Request resolved: https://github.com/facebookresearch/mmf/pull/979
+    
+    Reviewed By: vedanuj
+    
+    Differential Revision: D29283067
+    
+    Pulled By: ytsheng
+    
+    fbshipit-source-id: e5c52dc1323cdfd6e23a83803b289c7ade57332b
+
+[33mcommit 86db47b831b57dfe1a113e82c16916b2f3c86f30[m
+Author: Amanpreet Singh <apsdehal@gmail.com>
+Date:   Thu Jun 24 13:35:16 2021 -0700
+
+    [fix] Support for OmegaConf 2.1: fix rest of the tests (#981)
+    
+    Summary:
+    Some of the tests are still failing. Attempt to fix those.
+    
+    Pull Request resolved: https://github.com/facebookresearch/mmf/pull/981
+    
+    Reviewed By: ytsheng, vedanuj
+    
+    Differential Revision: D29311564
+    
+    Pulled By: apsdehal
+    
+    fbshipit-source-id: bbc98aa11dc94b8c0299ebd03f5eff8f3f7e1c07
+
+[33mcommit d9398c2b7661dded4754ca5288b3a5a4215bc9f7[m
+Author: Sasha Sheng <sash@fb.com>
+Date:   Wed Jun 23 02:05:47 2021 -0700
+
+    [fix] refactor regression (#978)
+    
+    Summary:
+    A regression caused by a recent refactor. Fixes issue: https://github.com/facebookresearch/mmf/issues/976
+    
+    Pull Request resolved: https://github.com/facebookresearch/mmf/pull/978
+    
+    Reviewed By: apsdehal
+    
+    Differential Revision: D29282922
+    
+    Pulled By: ytsheng
+    
+    fbshipit-source-id: c11b15283a4e83d76e115496076db917efacc43c
+
+[33mcommit 4546ea87da0abf3f17688cec6065f4ff8608750d[m
+Author: Sasha Sheng <sash@fb.com>
+Date:   Wed Jun 23 01:44:20 2021 -0700
+
+    [feat] add synchronization for clip
+    
+    Summary: Add clip download synchronization to address race for multi gpu training
+    
+    Reviewed By: apsdehal
+    
+    Differential Revision: D29236851
+    
+    fbshipit-source-id: f85eadc5968ae606a5991b1e5401db08dd6ceb66
+
+[33mcommit 41b81b5971ea0664dc3c92b06e5e75d03ab4f0ba[m
+Author: Amanpreet Singh <apsdehal@gmail.com>
+Date:   Wed Jun 23 00:01:26 2021 -0700
+
+    [feat] Patch MMF for concurrent use of transformer v3.x and v4.x (#960)
+    
+    Summary:
+    Due to internal systems being relying on older version, it is hard to
+    upgrade transformers v4.x while maintaining sanity. This diffs patches
+    4.x to behave same in terms of imports and can be used by end users who
+    want to upgrade to transformers v4.x without actually upgrading MMF.
+    
+    Pull Request resolved: https://github.com/facebookresearch/mmf/pull/960
+    
+    Test Plan: Tested by upgrading to new version.
+    
+    Reviewed By: vedanuj
+    
+    Differential Revision: D28917040
+    
+    Pulled By: apsdehal
+    
+    fbshipit-source-id: 0f01d507a2d0afbc4fa58bd44933966d23255e9a
+
+[33mcommit b01b0b966ce0ef5b5fa997d076f88e7cb146d806[m
+Author: Amjad Almahairi <aalmah@fb.com>
+Date:   Sun Jun 20 07:06:32 2021 -0700
+
+    Add AllAgainstOnePRAUC metric
+    
+    Summary: Adding all-against_one PRAUC metric used in WPIE.
+    
+    Reviewed By: rayhou0710
+    
+    Differential Revision: D28871282
+    
+    fbshipit-source-id: 7c7c39b4269671dde14444127f3249b5fce2ef1a
+
+[33mcommit b4635563506e182076b71a8beedbddb1699d9e70[m
+Author: Amanpreet Singh <apsdehal@gmail.com>
+Date:   Fri Jun 18 01:09:00 2021 -0700
+
+    [fix] Support OmegaConf 2.1 (#973)
+    
+    Summary:
+    Changes to support upgrading to omegaconf 2.1
+    
+    Pull Request resolved: https://github.com/facebookresearch/mmf/pull/973
+    
+    Reviewed By: ytsheng
+    
+    Differential Revision: D29189139
+    
+    Pulled By: apsdehal
+    
+    fbshipit-source-id: b719ec94b00bd24b48ad12d3e58ef1f44aa454c5
+
+[33mcommit ee88428602bef20ec464eaf1caa6461ee1df85b3[m
+Author: KMarino <kenneth.marino28@gmail.com>
+Date:   Wed Jun 16 19:19:08 2021 -0700
+
+    [feat] Adding KRISP, additions to OKVQA dataset (#750)
+    
+    Summary:
+    Adding KRISP Paper to mmf repo
+    
+    Additional changes to use image features for OKVQA
+    
+    Pull Request resolved: https://github.com/facebookresearch/mmf/pull/750
+    
+    Reviewed By: ytsheng, vedanuj
+    
+    Differential Revision: D29082706
+    
+    Pulled By: apsdehal
+    
+    fbshipit-source-id: 5eb3346291f6de8eaf44385d7a6cba52d317b8d4
+
+[33mcommit 75febbd6b6d5fa76b70dade0d8335aade3c46ac8[m
+Author: Licheng Yu <lichengyu@fb.com>
+Date:   Mon Jun 14 19:58:13 2021 -0700
+
+    [mmf_ads][sweep] sweep pretrain+finetune large model (#183)
+    
+    Summary:
+    Pull Request resolved: https://github.com/fairinternal/mmf-internal/pull/183
+    
+    Sweep finetuning from a pre-trained large model
+    
+    Differential Revision: D29056437
+    
+    fbshipit-source-id: 22214d8d3c6958ce4a4a8a0fcef0455efcf0be34
+
+[33mcommit 7f901ab819a80647bfe634ae9b3840d63d598a89[m
+Author: Mengjiao MJ Wang <mengjiaow@fb.com>
+Date:   Mon Jun 14 17:34:13 2021 -0700
+
+    [feat] add resnet18 as encoder (#970)
+    
+    Summary:
+    Pull Request resolved: https://github.com/facebookresearch/mmf/pull/970
+    
+    Adding resnet-18 image encoder
+    
+    Reviewed By: apsdehal
+    
+    Differential Revision: D28267636
+    
+    fbshipit-source-id: 49ad3860b7abfa7d0697be13a1369500337e9ed1
+
+[33mcommit c1683d881a3ebc735057ad334b56a58ba0373d44[m
+Author: Sasha Sheng <sash@fb.com>
+Date:   Sat Jun 12 10:08:25 2021 -0700
+
+    [feat][7/N] clip zeroshot eval (#166)
+    
+    Summary:
+    * Added the clip model
+    * Added the configs to do zeroshot eval
+      * Vit-B/32: 62.9560
+      * RN50: 58.9340
+      * RN101: 61.6
+      * RN50x4: 56.14
+    
+    To run:
+    `CUDA_VISIBLE_DEVICES=0 MMF_DATA_DIR=/checkpoint/ronghanghu/pythia/data python mmf_cli/run.py     config=projects/fb/clip/zeroshot_eval/imagenet.yaml  dataset=vissl_image     model=clip     run_type=val env.user_dir=/private/home/sash/megavlt/megavlt`
+    
+    Pull Request resolved: https://github.com/fairinternal/mmf-internal/pull/166
+    
+    Reviewed By: vedanuj
+    
+    Differential Revision: D27457629
+    
+    Pulled By: ytsheng
+    
+    fbshipit-source-id: 4a914cff2ed941ee1bd097de4db8d26a29256424
+
+[33mcommit 852fb9e1a4a3a02fec9f9874db9d77b48e9ea12c[m
+Author: Sasha Sheng <sash@fb.com>
+Date:   Sat Jun 12 09:58:11 2021 -0700
+
+    [feat] PL last validation after training (#933)
+    
+    Summary:
+    * this implements the last validation functionality after training since it was added in PL master recently.
+    * updated the tests to check for the last validation result.
+    * still waiting on PL to fix its tariner.global_step inconsistency
+    * two reports are being kept for now until we figure out a better way to consolidate them. They are being kept in the lightning module for calculating the early stopping and saving the checkpoint (PR coming soon); they are being kept in the loop callback for logging purposes. Eventually, we may move all of them into the lightning module. But I am submitting the PRs one step at the time for now.
+    
+    Pull Request resolved: https://github.com/facebookresearch/mmf/pull/933
+    
+    Reviewed By: apsdehal, simran2905
+    
+    Differential Revision: D28329041
+    
+    Pulled By: ytsheng
+    
+    fbshipit-source-id: 60f014fa37556a6d15645d5cfe8b1442c12b9aa2
+
+[33mcommit a9e3c1dfecfdbc0e58c7e4fe01fae7b451e833c2[m
+Author: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>
+Date:   Fri Jun 11 17:16:20 2021 -0700
+
+    Bump url-parse from 1.4.7 to 1.5.1 in /website (#932)
+    
+    Summary:
+    Bumps [url-parse](https://github.com/unshiftio/url-parse) from 1.4.7 to 1.5.1.
+    <details>
+    <summary>Commits</summary>
+    <ul>
+    <li><a href="https://github.com/unshiftio/url-parse/commit/eb6d9f51e395b7e47bf2594e457d541db21c713b"><code>eb6d9f5</code></a> [dist] 1.5.1</li>
+    <li><a href="https://github.com/unshiftio/url-parse/commit/750d8e8a9d45dbce9ff09759f0fe4564cdd47d74"><code>750d8e8</code></a> [fix] Fixes relative path resolving <a href="https://github-redirect.dependabot.com/unshiftio/url-parse/issues/199">https://github.com/facebookresearch/mmf/issues/199</a> <a href="https://github-redirect.dependabot.com/unshiftio/url-parse/issues/200">https://github.com/facebookresearch/mmf/issues/200</a> (<a href="https://github-redirect.dependabot.com/unshiftio/url-parse/issues/201">https://github.com/facebookresearch/mmf/issues/201</a>)</li>
+    <li><a href="https://github.com/unshiftio/url-parse/commit/3ac777474ba5dc48a7e33771cbb311fc6f69bef8"><code>3ac7774</code></a> [test] Make test consistent for browser testing</li>
+    <li><a href="https://github.com/unshiftio/url-parse/commit/267a0c6f7ef1a58271be61611c5103daace602c9"><code>267a0c6</code></a> [dist] 1.5.0</li>
+    <li><a href="https://github.com/unshiftio/url-parse/commit/d1e7e8822f26e8a49794b757123b51386325b2b0"><code>d1e7e88</code></a> [security] More backslash fixes (<a href="https://github-redirect.dependabot.com/unshiftio/url-parse/issues/197">https://github.com/facebookresearch/mmf/issues/197</a>)</li>
+    <li><a href="https://github.com/unshiftio/url-parse/commit/d99bf4cf259b7378c855f786edc253e70405ffdc"><code>d99bf4c</code></a> [ignore] Remove npm-debug.log from .gitignore</li>
+    <li><a href="https://github.com/unshiftio/url-parse/commit/422c8b5e4cac6a79cd35b4e86731476dcbeec7e4"><code>422c8b5</code></a> [pkg] Replace nyc with c8</li>
+    <li><a href="https://github.com/unshiftio/url-parse/commit/933809d630c7b21399b4e5df59fccccd80033b21"><code>933809d</code></a> [pkg] Move coveralls to dev dependencies</li>
+    <li><a href="https://github.com/unshiftio/url-parse/commit/190b2168035899a2a88f2dc2625963bf7e2f338f"><code>190b216</code></a> [pkg] Add .npmrc</li>
+    <li><a href="https://github.com/unshiftio/url-parse/commit/ce3783f4ea25753cfa36376769c14e4e2fe6ea80"><code>ce3783f</code></a> [test] Do not test on all available versions of Edge and Safari</li>
+    <li>Additional commits viewable in <a href="https://github.com/unshiftio/url-parse/compare/1.4.7...1.5.1">compare view</a></li>
+    </ul>
+    </details>
+    <br />
+    
+    [![Dependabot compatibility score](https://dependabot-badges.githubapp.com/badges/compatibility_score?dependency-name=url-parse&package-manager=npm_and_yarn&previous-version=1.4.7&new-version=1.5.1)](https://docs.github.com/en/github/managing-security-vulnerabilities/about-dependabot-security-updates#about-compatibility-scores)
+    
+    Dependabot will resolve any conflicts with this PR as long as you don't alter it yourself. You can also trigger a rebase manually by commenting `dependabot rebase`.
+    
+    [//]: # (dependabot-automerge-start)
+    [//]: # (dependabot-automerge-end)
+    
+     ---
+    
+    <details>
+    <summary>Dependabot commands and options</summary>
+    <br />
+    
+    You can trigger Dependabot actions by commenting on this PR:
+    - `dependabot rebase` will rebase this PR
+    - `dependabot recreate` will recreate this PR, overwriting any edits that have been made to it
+    - `dependabot merge` will merge this PR after your CI passes on it
+    - `dependabot squash and merge` will squash and merge this PR after your CI passes on it
+    - `dependabot cancel merge` will cancel a previously requested merge and block automerging
+    - `dependabot reopen` will reopen this PR if it is closed
+    - `dependabot close` will close this PR and stop Dependabot recreating it. You can achieve the same result by closing it manually
+    - `dependabot ignore this major version` will close this PR and stop Dependabot creating any more for this major version (unless you reopen the PR or upgrade to it yourself)
+    - `dependabot ignore this minor version` will close this PR and stop Dependabot creating any more for this minor version (unless you reopen the PR or upgrade to it yourself)
+    - `dependabot ignore this dependency` will close this PR and stop Dependabot creating any more for this dependency (unless you reopen the PR or upgrade to it yourself)
+    - `dependabot use these labels` will set the current labels as the default for future PRs for this repo and language
+    - `dependabot use these reviewers` will set the current reviewers as the default for future PRs for this repo and language
+    - `dependabot use these assignees` will set the current assignees as the default for future PRs for this repo and language
+    - `dependabot use this milestone` will set the current milestone as the default for future PRs for this repo and language
+    
+    You can disable automated security fix PRs for this repo from the [Security Alerts page](https://github.com/facebookresearch/mmf/network/alerts).
+    
+    </details>
+    
+    Pull Request resolved: https://github.com/facebookresearch/mmf/pull/932
+    
+    Reviewed By: apsdehal
+    
+    Differential Revision: D28430674
+    
+    Pulled By: vedanuj
+    
+    fbshipit-source-id: 7691d843940db4685202618bda30cc99a55e00d3
+
+[33mcommit 74c4f1f333e3c6f9af839dd518c67f20498be947[m
+Author: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>
+Date:   Fri Jun 11 17:11:39 2021 -0700
+
+    Bump lodash from 4.17.19 to 4.17.21 in /website (#936)
+    
+    Summary:
+    Bumps [lodash](https://github.com/lodash/lodash) from 4.17.19 to 4.17.21.
+    <details>
+    <summary>Commits</summary>
+    <ul>
+    <li><a href="https://github.com/lodash/lodash/commit/f299b52f39486275a9e6483b60a410e06520c538"><code>f299b52</code></a> Bump to v4.17.21</li>
+    <li><a href="https://github.com/lodash/lodash/commit/c4847ebe7d14540bb28a8b932a9ce1b9ecbfee1a"><code>c4847eb</code></a> Improve performance of <code>toNumber</code>, <code>trim</code> and <code>trimEnd</code> on large input strings</li>
+    <li><a href="https://github.com/lodash/lodash/commit/3469357cff396a26c363f8c1b5a91dde28ba4b1c"><code>3469357</code></a> Prevent command injection through <code>_.template</code>'s <code>variable</code> option</li>
+    <li><a href="https://github.com/lodash/lodash/commit/ded9bc66583ed0b4e3b7dc906206d40757b4a90a"><code>ded9bc6</code></a> Bump to v4.17.20.</li>
+    <li><a href="https://github.com/lodash/lodash/commit/63150ef7645ac07961b63a86490f419f356429aa"><code>63150ef</code></a> Documentation fixes.</li>
+    <li><a href="https://github.com/lodash/lodash/commit/00f0f62a979d2f5fa0287c06eae70cf9a62d8794"><code>00f0f62</code></a> test.js: Remove trailing comma.</li>
+    <li><a href="https://github.com/lodash/lodash/commit/846e434c7a5b5692c55ebf5715ed677b70a32389"><code>846e434</code></a> Temporarily use a custom fork of <code>lodash-cli</code>.</li>
+    <li><a href="https://github.com/lodash/lodash/commit/5d046f39cbd27f573914768e3b36eeefcc4f1229"><code>5d046f3</code></a> Re-enable Travis tests on <code>4.17</code> branch.</li>
+    <li><a href="https://github.com/lodash/lodash/commit/aa816b36d402a1ad9385142ce7188f17dae514fd"><code>aa816b3</code></a> Remove <code>/npm-package</code>.</li>
+    <li>See full diff in <a href="https://github.com/lodash/lodash/compare/4.17.19...4.17.21">compare view</a></li>
+    </ul>
+    </details>
+    <details>
+    <summary>Maintainer changes</summary>
+    <p>This version was pushed to npm by <a href="https://www.npmjs.com/~bnjmnt4n">bnjmnt4n</a>, a new releaser for lodash since your current version.</p>
+    </details>
+    <br />
+    
+    [![Dependabot compatibility score](https://dependabot-badges.githubapp.com/badges/compatibility_score?dependency-name=lodash&package-manager=npm_and_yarn&previous-version=4.17.19&new-version=4.17.21)](https://docs.github.com/en/github/managing-security-vulnerabilities/about-dependabot-security-updates#about-compatibility-scores)
+    
+    Dependabot will resolve any conflicts with this PR as long as you don't alter it yourself. You can also trigger a rebase manually by commenting `dependabot rebase`.
+    
+    [//]: # (dependabot-automerge-start)
+    [//]: # (dependabot-automerge-end)
+    
+     ---
+    
+    <details>
+    <summary>Dependabot commands and options</summary>
+    <br />
+    
+    You can trigger Dependabot actions by commenting on this PR:
+    - `dependabot rebase` will rebase this PR
+    - `dependabot recreate` will recreate this PR, overwriting any edits that have been made to it
+    - `dependabot merge` will merge this PR after your CI passes on it
+    - `dependabot squash and merge` will squash and merge this PR after your CI passes on it
+    - `dependabot cancel merge` will cancel a previously requested merge and block automerging
+    - `dependabot reopen` will reopen this PR if it is closed
+    - `dependabot close` will close this PR and stop Dependabot recreating it. You can achieve the same result by closing it manually
+    - `dependabot ignore this major version` will close this PR and stop Dependabot creating any more for this major version (unless you reopen the PR or upgrade to it yourself)
+    - `dependabot ignore this minor version` will close this PR and stop Dependabot creating any more for this minor version (unless you reopen the PR or upgrade to it yourself)
+    - `dependabot ignore this dependency` will close this PR and stop Dependabot creating any more for this dependency (unless you reopen the PR or upgrade to it yourself)
+    - `dependabot use these labels` will set the current labels as the default for future PRs for this repo and language
+    - `dependabot use these reviewers` will set the current reviewers as the default for future PRs for this repo and language
+    - `dependabot use these assignees` will set the current assignees as the default for future PRs for this repo and language
+    - `dependabot use this milestone` will set the current milestone as the default for future PRs for this repo and language
+    
+    You can disable automated security fix PRs for this repo from the [Security Alerts page](https://github.com/facebookresearch/mmf/network/alerts).
+    
+    </details>
+    
+    Pull Request resolved: https://github.com/facebookresearch/mmf/pull/936
+    
+    Reviewed By: apsdehal
+    
+    Differential Revision: D28430679
+    
+    Pulled By: vedanuj
+    
+    fbshipit-source-id: 017157083dc80a6d705fbe1c2964847cf4b43396
+
+[33mcommit 9ef451cb2ba9b928da3e33f07faffc38c49527b4[m
+Author: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>
+Date:   Fri Jun 11 17:09:39 2021 -0700
+
+    Bump ws from 6.2.1 to 6.2.2 in /website (#957)
+    
+    Summary:
+    Bumps [ws](https://github.com/websockets/ws) from 6.2.1 to 6.2.2.
+    <details>
+    <summary>Commits</summary>
+    <ul>
+    <li>See full diff in <a href="https://github.com/websockets/ws/commits">compare view</a></li>
+    </ul>
+    </details>
+    <br />
+    
+    [![Dependabot compatibility score](https://dependabot-badges.githubapp.com/badges/compatibility_score?dependency-name=ws&package-manager=npm_and_yarn&previous-version=6.2.1&new-version=6.2.2)](https://docs.github.com/en/github/managing-security-vulnerabilities/about-dependabot-security-updates#about-compatibility-scores)
+    
+    Dependabot will resolve any conflicts with this PR as long as you don't alter it yourself. You can also trigger a rebase manually by commenting `dependabot rebase`.
+    
+    [//]: # (dependabot-automerge-start)
+    [//]: # (dependabot-automerge-end)
+    
+     ---
+    
+    <details>
+    <summary>Dependabot commands and options</summary>
+    <br />
+    
+    You can trigger Dependabot actions by commenting on this PR:
+    - `dependabot rebase` will rebase this PR
+    - `dependabot recreate` will recreate this PR, overwriting any edits that have been made to it
+    - `dependabot merge` will merge this PR after your CI passes on it
+    - `dependabot squash and merge` will squash and merge this PR after your CI passes on it
+    - `dependabot cancel merge` will cancel a previously requested merge and block automerging
+    - `dependabot reopen` will reopen this PR if it is closed
+    - `dependabot close` will close this PR and stop Dependabot recreating it. You can achieve the same result by closing it manually
+    - `dependabot ignore this major version` will close this PR and stop Dependabot creating any more for this major version (unless you reopen the PR or upgrade to it yourself)
+    - `dependabot ignore this minor version` will close this PR and stop Dependabot creating any more for this minor version (unless you reopen the PR or upgrade to it yourself)
+    - `dependabot ignore this dependency` will close this PR and stop Dependabot creating any more for this dependency (unless you reopen the PR or upgrade to it yourself)
+    - `dependabot use these labels` will set the current labels as the default for future PRs for this repo and language
+    - `dependabot use these reviewers` will set the current reviewers as the default for future PRs for this repo and language
+    - `dependabot use these assignees` will set the current assignees as the default for future PRs for this repo and language
+    - `dependabot use this milestone` will set the current milestone as the default for future PRs for this repo and language
+    
+    You can disable automated security fix PRs for this repo from the [Security Alerts page](https://github.com/facebookresearch/mmf/network/alerts).
+    
+    </details>
+    
+    Pull Request resolved: https://github.com/facebookresearch/mmf/pull/957
+    
+    Reviewed By: apsdehal
+    
+    Differential Revision: D28995838
+    
+    Pulled By: vedanuj
+    
+    fbshipit-source-id: c5acd84ec6c66f4c737774f7c29ab9403174d2e3
+
+[33mcommit 43702841beeb830939bf81a08bacb3c5ad754001[m
+Author: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>
+Date:   Fri Jun 11 17:06:17 2021 -0700
+
+    Bump merge-deep from 3.0.2 to 3.0.3 in /website (#963)
+    
+    Summary:
+    Bumps [merge-deep](https://github.com/jonschlinkert/merge-deep) from 3.0.2 to 3.0.3.
+    <details>
+    <summary>Commits</summary>
+    <ul>
+    <li><a href="https://github.com/jonschlinkert/merge-deep/commit/628ff47c9d824ccf21adf9a2b7cc6b74632e11a1"><code>628ff47</code></a> 3.0.3</li>
+    <li><a href="https://github.com/jonschlinkert/merge-deep/commit/cfbe20ccdb00255b711de57e37ed8ce9f109ef3f"><code>cfbe20c</code></a> run verb to generate README documentation</li>
+    <li><a href="https://github.com/jonschlinkert/merge-deep/commit/e370968581413a2e5ffdbbf7c2f5094e0e0b3861"><code>e370968</code></a> Merge pull request <a href="https://github-redirect.dependabot.com/jonschlinkert/merge-deep/issues/17">https://github.com/facebookresearch/mmf/issues/17</a> from jonschlinkert/key-properties</li>
+    <li><a href="https://github.com/jonschlinkert/merge-deep/commit/393e2cbaeacf54e77a307c3620a00f0ac057b8d5"><code>393e2cb</code></a> adding a test to ensure using merge-deep for inheritance still works</li>
+    <li><a href="https://github.com/jonschlinkert/merge-deep/commit/c39b16134a6a9704be2e661b49b92e8561f10d90"><code>c39b161</code></a> add test to ensure constructor is not cloned</li>
+    <li><a href="https://github.com/jonschlinkert/merge-deep/commit/11e5dd56de8a6aed0b1ed022089dbce6968d82a5"><code>11e5dd5</code></a> add isValidKey function to ensure only valid keys are merged</li>
+    <li>See full diff in <a href="https://github.com/jonschlinkert/merge-deep/compare/3.0.2...3.0.3">compare view</a></li>
+    </ul>
+    </details>
+    <br />
+    
+    [![Dependabot compatibility score](https://dependabot-badges.githubapp.com/badges/compatibility_score?dependency-name=merge-deep&package-manager=npm_and_yarn&previous-version=3.0.2&new-version=3.0.3)](https://docs.github.com/en/github/managing-security-vulnerabilities/about-dependabot-security-updates#about-compatibility-scores)
+    
+    Dependabot will resolve any conflicts with this PR as long as you don't alter it yourself. You can also trigger a rebase manually by commenting `dependabot rebase`.
+    
+    [//]: # (dependabot-automerge-start)
+    [//]: # (dependabot-automerge-end)
+    
+     ---
+    
+    <details>
+    <summary>Dependabot commands and options</summary>
+    <br />
+    
+    You can trigger Dependabot actions by commenting on this PR:
+    - `dependabot rebase` will rebase this PR
+    - `dependabot recreate` will recreate this PR, overwriting any edits that have been made to it
+    - `dependabot merge` will merge this PR after your CI passes on it
+    - `dependabot squash and merge` will squash and merge this PR after your CI passes on it
+    - `dependabot cancel merge` will cancel a previously requested merge and block automerging
+    - `dependabot reopen` will reopen this PR if it is closed
+    - `dependabot close` will close this PR and stop Dependabot recreating it. You can achieve the same result by closing it manually
+    - `dependabot ignore this major version` will close this PR and stop Dependabot creating any more for this major version (unless you reopen the PR or upgrade to it yourself)
+    - `dependabot ignore this minor version` will close this PR and stop Dependabot creating any more for this minor version (unless you reopen the PR or upgrade to it yourself)
+    - `dependabot ignore this dependency` will close this PR and stop Dependabot creating any more for this dependency (unless you reopen the PR or upgrade to it yourself)
+    - `dependabot use these labels` will set the current labels as the default for future PRs for this repo and language
+    - `dependabot use these reviewers` will set the current reviewers as the default for future PRs for this repo and language
+    - `dependabot use these assignees` will set the current assignees as the default for future PRs for this repo and language
+    - `dependabot use this milestone` will set the current milestone as the default for future PRs for this repo and language
+    
+    You can disable automated security fix PRs for this repo from the [Security Alerts page](https://github.com/facebookresearch/mmf/network/alerts).
+    
+    </details>
+    
+    Pull Request resolved: https://github.com/facebookresearch/mmf/pull/963
+    
+    Reviewed By: apsdehal
+    
+    Differential Revision: D28995854
+    
+    Pulled By: vedanuj
+    
+    fbshipit-source-id: 0e143e6746df8e5120a2a74633a0b6ea0d781018
+
+[33mcommit 03b31365b99b52bfa7d135c1e9321f9e3aedcc8b[m
+Author: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>
+Date:   Fri Jun 11 17:05:25 2021 -0700
+
+    Bump hosted-git-info from 2.8.8 to 2.8.9 in /website (#937)
+    
+    Summary:
+    Bumps [hosted-git-info](https://github.com/npm/hosted-git-info) from 2.8.8 to 2.8.9.
+    <details>
+    <summary>Changelog</summary>
+    <p><em>Sourced from <a href="https://github.com/npm/hosted-git-info/blob/v2.8.9/CHANGELOG.md">hosted-git-info's changelog</a>.</em></p>
+    <blockquote>
+    <h2><a href="https://github.com/npm/hosted-git-info/compare/v2.8.8...v2.8.9">2.8.9</a> (2021-04-07)</h2>
+    <h3>Bug Fixes</h3>
+    <ul>
+    <li>backport regex fix from <a href="https://github-redirect.dependabot.com/npm/hosted-git-info/issues/76">https://github.com/facebookresearch/mmf/issues/76</a> (<a href="https://github.com/npm/hosted-git-info/commit/29adfe5">29adfe5</a>), closes <a href="https://github-redirect.dependabot.com/npm/hosted-git-info/issues/84">https://github.com/facebookresearch/mmf/issues/84</a></li>
+    </ul>
+    <p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+    </blockquote>
+    </details>
+    <details>
+    <summary>Commits</summary>
+    <ul>
+    <li><a href="https://github.com/npm/hosted-git-info/commit/8d4b3697d79bcd89cdb36d1db165e3696c783a01"><code>8d4b369</code></a> chore(release): 2.8.9</li>
+    <li><a href="https://github.com/npm/hosted-git-info/commit/29adfe5ef789784c861b2cdeb15051ec2ba651a7"><code>29adfe5</code></a> fix: backport regex fix from <a href="https://github-redirect.dependabot.com/npm/hosted-git-info/issues/76">https://github.com/facebookresearch/mmf/issues/76</a></li>
+    <li>See full diff in <a href="https://github.com/npm/hosted-git-info/compare/v2.8.8...v2.8.9">compare view</a></li>
+    </ul>
+    </details>
+    <details>
+    <summary>Maintainer changes</summary>
+    <p>This version was pushed to npm by <a href="https://www.npmjs.com/~nlf">nlf</a>, a new releaser for hosted-git-info since your current version.</p>
+    </details>
+    <br />
+    
+    [![Dependabot compatibility score](https://dependabot-badges.githubapp.com/badges/compatibility_score?dependency-name=hosted-git-info&package-manager=npm_and_yarn&previous-version=2.8.8&new-version=2.8.9)](https://docs.github.com/en/github/managing-security-vulnerabilities/about-dependabot-security-updates#about-compatibility-scores)
+    
+    Dependabot will resolve any conflicts with this PR as long as you don't alter it yourself. You can also trigger a rebase manually by commenting `dependabot rebase`.
+    
+    [//]: # (dependabot-automerge-start)
+    [//]: # (dependabot-automerge-end)
+    
+     ---
+    
+    <details>
+    <summary>Dependabot commands and options</summary>
+    <br />
+    
+    You can trigger Dependabot actions by commenting on this PR:
+    - `dependabot rebase` will rebase this PR
+    - `dependabot recreate` will recreate this PR, overwriting any edits that have been made to it
+    - `dependabot merge` will merge this PR after your CI passes on it
+    - `dependabot squash and merge` will squash and merge this PR after your CI passes on it
+    - `dependabot cancel merge` will cancel a previously requested merge and block automerging
+    - `dependabot reopen` will reopen this PR if it is closed
+    - `dependabot close` will close this PR and stop Dependabot recreating it. You can achieve the same result by closing it manually
+    - `dependabot ignore this major version` will close this PR and stop Dependabot creating any more for this major version (unless you reopen the PR or upgrade to it yourself)
+    - `dependabot ignore this minor version` will close this PR and stop Dependabot creating any more for this minor version (unless you reopen the PR or upgrade to it yourself)
+    - `dependabot ignore this dependency` will close this PR and stop Dependabot creating any more for this dependency (unless you reopen the PR or upgrade to it yourself)
+    - `dependabot use these labels` will set the current labels as the default for future PRs for this repo and language
+    - `dependabot use these reviewers` will set the current reviewers as the default for future PRs for this repo and language
+    - `dependabot use these assignees` will set the current assignees as the default for future PRs for this repo and language
+    - `dependabot use this milestone` will set the current milestone as the default for future PRs for this repo and language
+    
+    You can disable automated security fix PRs for this repo from the [Security Alerts page](https://github.com/facebookresearch/mmf/network/alerts).
+    
+    </details>
+    
+    Pull Request resolved: https://github.com/facebookresearch/mmf/pull/937
+    
+    Reviewed By: apsdehal
+    
+    Differential Revision: D28430663
+    
+    Pulled By: vedanuj
+    
+    fbshipit-source-id: 167c5d80e1148d1c244f01940aa85adf81c6ef38
+
+[33mcommit 1b75e26cf01f026290ca233cb5514e0ecfef97cd[m
+Author: Vedanuj Goswami <vedanujg@gmail.com>
+Date:   Fri Jun 11 16:39:25 2021 -0700
+
+    [feat] AIRStore Dataset Integration (#918)
+    
+    Summary:
+    - Add Airstore dataset
+    - Add config for running masked coco training with Airstore
+    
+    Pull Request resolved: https://github.com/facebookresearch/mmf/pull/918
+    
+    Test Plan: - Tested with Masked COCO training
+    
+    Reviewed By: apsdehal
+    
+    Differential Revision: D29050028
+    
+    Pulled By: vedanuj
+    
+    fbshipit-source-id: 1e5b320778418a832507a5fbe6aa16d214f36c12
+
+[33mcommit e2ebfecdb6e7bf193ec0eeb341180992246d2c16[m
+Author: Ronghang Hu <ronghang.hu@gmail.com>
+Date:   Thu Jun 10 02:44:05 2021 -0700
+
+    [fix] set logging level according to training.logger_level (#959)
+    
+    Summary:
+    Correctly set logging level in the logger according to training.logger_level.
+    
+    Also fix lint errors in other files to pass the tests.
+    
+    Pull Request resolved: https://github.com/facebookresearch/mmf/pull/959
+    
+    Test Plan: tested locally.
+    
+    Reviewed By: vedanuj
+    
+    Differential Revision: D28925702
+    
+    Pulled By: ronghanghu
+    
+    fbshipit-source-id: e42e8eb559b2b32f4e8c7dda9fc2a3a424f63eda
+
+[33mcommit 63eeb33288c25e66754af695b7e9be0bee6137a4[m
+Author: Jie Lei 雷杰 <jielei@cs.unc.edu>
+Date:   Tue Jun 8 10:43:36 2021 -0700
+
+    fix fp16 overflow issue (#962)
+    
+    Summary:
+    "-1e9" induces "RuntimeError: value cannot be converted to type at::Half without overflow:" when fp16=true, replace it with "-10000.0"
+    
+    Tested locally
+    
+    Thanks for your contribution!
+    
+    If you're sending a large PR (e.g., >50 lines), please open an issue first about
+    the feature/bug, and indicate how you want to contribute.
+    
+    Use [contributing guidelines](https://github.com/facebookresearch/mmf/tree/master/.github/CONTRIBUTING.md) before opening up the PR to follow MMF style guidelines.
+    
+    Pull Request resolved: https://github.com/facebookresearch/mmf/pull/962
+    
+    Reviewed By: vedanuj
+    
+    Differential Revision: D28963671
+    
+    Pulled By: jayleicn
+    
+    fbshipit-source-id: f8dcdd28eeccc9d2b19af4cd17710c869feb0eea
+
+[33mcommit 3edcaedbca85061562e075902f4f8361bb38c85d[m
+Author: Amanpreet Singh <apsdehal@gmail.com>
+Date:   Mon Jun 7 23:31:18 2021 -0700
+
+    [feat,fix] Random init bert encocder, other QoL fixes (#941)
+    
+    Summary:
+    Pull Request resolved: https://github.com/facebookresearch/mmf/pull/941
+    
+    - Add dataset_type property to base_dataset class to avoid some failures
+    in dataset builders
+    - broadcast fp16 in OSS
+    - Fix NCCL error happening in sweep script
+    - is_correct if not present in processor output defaults to True
+    
+    This changes are required for running fairseq_mlm.
+    
+    Pull Request resolved: https://github.com/fairinternal/mmf-internal/pull/178
+    
+    Reviewed By: vedanuj
+    
+    Differential Revision: D28393021
+    
+    Pulled By: apsdehal
+    
+    fbshipit-source-id: c31bcff57d1ce8bde71a38e7e99cc70ecb5a7c13
+
+[33mcommit 062c878a5ff961af0d8c035b36d3adb5df7da1de[m
+Author: Sasha Sheng <sash@fb.com>
+Date:   Mon Jun 7 23:23:58 2021 -0700
+
+    [feat][6/N] clip accuracy (#165)
+    
+    Summary: Pull Request resolved: https://github.com/fairinternal/mmf-internal/pull/165
+    
+    Test Plan: Run `pytest tests` to see the metrics test cases pass
+    
+    Reviewed By: apsdehal
+    
+    Differential Revision: D27457530
+    
+    Pulled By: ytsheng
+    
+    fbshipit-source-id: ed82a88f3fc21a881c9d4d364a9efaba624cf95e
+
+[33mcommit 7f339af92a4974a58f7c61d3d141fc109a2679e6[m
+Author: Sasha Sheng <sash@fb.com>
+Date:   Mon Jun 7 21:36:01 2021 -0700
+
+    [feat][5/N] clip encoder add test + simplify api (#175)
+    
+    Summary:
+    Pull Request resolved: https://github.com/fairinternal/mmf-internal/pull/175
+    
+    This diff has the following features:
+    
+    * simplify clip api to allow people to specify the pretrained path name, to the clip provided path without having to specify more things.
+    * add tests, tests includes
+      * loading pretrained from http web
+      * loading pretrained from manifold
+      * loading pretrained from disk
+      * loading not pretrained, random initialized
+    * make it so that the clip path can be fetch from one of the following three locations:
+      * http web
+      * manifold
+      * local disk
+    * if you do not specify anything, then we default to using ViT/B-32
+    
+    Reviewed By: vedanuj, apsdehal
+    
+    Differential Revision: D27760827
+    
+    fbshipit-source-id: 52369d50f3abebcf7c1b6ee344823351567f8d86
+
+[33mcommit 10fba9a47c5baeaa19dac60832343db781a2c6ab[m
+Author: Jun Chen <junchen20@fb.com>
+Date:   Mon Jun 7 12:29:44 2021 -0700
+
+    [MMC][refactor] split processor file
+    
+    Summary: Split `processors.py` into four files, one base file and three task-specific files.
+    
+    Reviewed By: animesh-s, lichengunc
+    
+    Differential Revision: D28890964
+    
+    fbshipit-source-id: 466dc2d736f208b806d1f730cf9921c75559fd79
+
+[33mcommit 0dd9c36b5d1435230fd8c25e30014b9f14f61b85[m
+Author: Madian Khabsa <mkhabsa@fb.com>
+Date:   Fri Jun 4 12:20:48 2021 -0700
+
+    [MMF][fix] fix python version comparison (#958)
+    
+    Summary:
+    Pull Request resolved: https://github.com/facebookresearch/mmf/pull/958
+    
+    Move from string based comparison to major/minor integer based comparison.
+    Searched for `torch.__version__` in repo to find all uses
+    
+    Reviewed By: vedanuj
+    
+    Differential Revision: D28900525
+    
+    fbshipit-source-id: b6c069ffdba9b849c58bf6f50f5d453e0edb68ee
+
+[33mcommit 8e7cbd5d9a0010d654b00b55a4c8985ded323ea4[m
+Author: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>
+Date:   Thu Jun 3 11:21:10 2021 -0700
+
+    Bump dns-packet from 1.3.1 to 1.3.4 in /website (#951)
+    
+    Summary:
+    Bumps [dns-packet](https://github.com/mafintosh/dns-packet) from 1.3.1 to 1.3.4.
+    <details>
+    <summary>Commits</summary>
+    <ul>
+    <li><a href="https://github.com/mafintosh/dns-packet/commit/ebdf849da5dc0d96836e87628349776c623c5be7"><code>ebdf849</code></a> 1.3.4</li>
+    <li><a href="https://github.com/mafintosh/dns-packet/commit/ac578722f2707310b841b65aae61d6332f8882a1"><code>ac57872</code></a> move all allocUnsafes to allocs for easier maintenance</li>
+    <li><a href="https://github.com/mafintosh/dns-packet/commit/c64c9507e51532c9e9a3cbefa146a134ecc025fd"><code>c64c950</code></a> 1.3.3</li>
+    <li><a href="https://github.com/mafintosh/dns-packet/commit/0598ba19d18da4568b32415e60a9629061b3c45c"><code>0598ba1</code></a> fix .. in encodingLength</li>
+    <li><a href="https://github.com/mafintosh/dns-packet/commit/010aedb33c1ee8c3f558db5249c1d46e2bd7a101"><code>010aedb</code></a> 1.3.2</li>
+    <li><a href="https://github.com/mafintosh/dns-packet/commit/0d0d593f8df4e2712c43957a6c62e95047f12b2d"><code>0d0d593</code></a> backport encodingLength fix to v1</li>
+    <li>See full diff in <a href="https://github.com/mafintosh/dns-packet/compare/v1.3.1...v1.3.4">compare view</a></li>
+    </ul>
+    </details>
+    <br />
+    
+    [![Dependabot compatibility score](https://dependabot-badges.githubapp.com/badges/compatibility_score?dependency-name=dns-packet&package-manager=npm_and_yarn&previous-version=1.3.1&new-version=1.3.4)](https://docs.github.com/en/github/managing-security-vulnerabilities/about-dependabot-security-updates#about-compatibility-scores)
+    
+    Dependabot will resolve any conflicts with this PR as long as you don't alter it yourself. You can also trigger a rebase manually by commenting `dependabot rebase`.
+    
+    [//]: # (dependabot-automerge-start)
+    [//]: # (dependabot-automerge-end)
+    
+     ---
+    
+    <details>
+    <summary>Dependabot commands and options</summary>
+    <br />
+    
+    You can trigger Dependabot actions by commenting on this PR:
+    - `dependabot rebase` will rebase this PR
+    - `dependabot recreate` will recreate this PR, overwriting any edits that have been made to it
+    - `dependabot merge` will merge this PR after your CI passes on it
+    - `dependabot squash and merge` will squash and merge this PR after your CI passes on it
+    - `dependabot cancel merge` will cancel a previously requested merge and block automerging
+    - `dependabot reopen` will reopen this PR if it is closed
+    - `dependabot close` will close this PR and stop Dependabot recreating it. You can achieve the same result by closing it manually
+    - `dependabot ignore this major version` will close this PR and stop Dependabot creating any more for this major version (unless you reopen the PR or upgrade to it yourself)
+    - `dependabot ignore this minor version` will close this PR and stop Dependabot creating any more for this minor version (unless you reopen the PR or upgrade to it yourself)
+    - `dependabot ignore this dependency` will close this PR and stop Dependabot creating any more for this dependency (unless you reopen the PR or upgrade to it yourself)
+    - `dependabot use these labels` will set the current labels as the default for future PRs for this repo and language
+    - `dependabot use these reviewers` will set the current reviewers as the default for future PRs for this repo and language
+    - `dependabot use these assignees` will set the current assignees as the default for future PRs for this repo and language
+    - `dependabot use this milestone` will set the current milestone as the default for future PRs for this repo and language
+    
+    You can disable automated security fix PRs for this repo from the [Security Alerts page](https://github.com/facebookresearch/mmf/network/alerts).
+    
+    </details>
+    
+    Pull Request resolved:

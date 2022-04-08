@@ -1,0 +1,87 @@
+includes:
+- configs/models/mmbt/classification.yaml
+# Please see fbcode/faim/mmf/mmf/datasets/fb/builders/everstore/builder.py
+# for details on configuration
+dataset_config:
+  everstore:
+    constructor:
+      namespace: feed
+      table: misinfo_before_dark_0310_features_2_evhandles_with_val
+      partitions: null
+    set_name_key: set_name
+    set_name_mapping:
+      train: training
+      val: validation
+      test: testing
+    schema:
+    - content_id
+    - xray_hash
+    - post_text
+    - ocr_text
+    - is_misinfo
+    - set_name
+    everstore_col: everstore_handle
+    filters: []
+    processors:
+      batch_processor:
+        type: image_with_text
+        params:
+          feature_key: xray_hash
+          text_keys: [post_text, ocr_text]
+          label_key: is_misinfo
+          id_key: content_id
+          processors:
+            text_processor:
+              type: multi_sentence_bert_tokenizer
+              params:
+                tokenizer_config:
+                  type: bert-base-uncased
+                  params:
+                    do_lower_case: true
+                mask_probability: 0
+                max_seq_length: 128
+                fusion: concat
+            feature_processor:
+              type: xray_hash
+              params: {}
+            image_processor:
+              type: torchvision_transforms
+              params:
+                transforms:
+                  - type: Resize
+                    params:
+                      size: [256, 256]
+                  - type: CenterCrop
+                    params:
+                      size: [224, 224]
+                  - ToTensor
+                  - GrayScaleTo3Channels
+                  - type: Normalize
+                    params:
+                      mean: [0.46777044, 0.44531429, 0.40661017]
+                      std: [0.12221994, 0.12145835, 0.14380469]
+
+scheduler:
+  type: warmup_linear
+  params:
+    num_warmup_steps: 2000
+    num_training_steps: ${training.max_updates}
+
+optimizer:
+  type: adam_w
+  params:
+    lr: 1e-5
+    eps: 1e-8
+
+evaluation:
+    metrics:
+    - binary_ap
+    - roc_auc
+
+training:
+  batch_size: 32
+  lr_scheduler: true
+  max_updates: 22000
+  early_stop:
+    criteria: everstore/binary_ap
+    minimize: false

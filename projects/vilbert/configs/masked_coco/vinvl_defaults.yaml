@@ -1,0 +1,19 @@
+includes:
+- ./defaults.yaml
+
+model_config:
+  vilbert:
+    visual_target: null
+dataset_config:
+  masked_coco:
+    return_features_info: true
+    use_images: false
+    use_features: true
+    features:
+      train:
+      - coco/defaults/features/trainval2014_vinvl_nopadding.lmdb
+      val:
+      - coco/defaults/features/trainval2014_vinvl_nopadding.lmdb
+      test:
+      - coco/defaults/features/test2015_vinvl_nopadding.lmdb
+    

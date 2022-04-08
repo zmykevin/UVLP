@@ -1,0 +1,89 @@
+includes:
+- configs/models/mmbt/classification.yaml
+- configs/models/mmbt/with_features.yaml
+# Please see fbcode/faim/mmf/mmf/datasets/fb/builders/hive/builder.py
+# for details on configuration
+dataset_config:
+  hive:
+    constructor:
+      namespace: ad_metrics
+      table: political_ads_image_us_ssl_0609
+      partitions: null
+    set_name_key: set_name
+    set_name_mapping:
+      train: training
+      val: validation
+      test: testing
+    schema:
+    - fbid
+    - xray
+    - ocr
+    - label
+    - set_name
+    filters: []
+    processors:
+      batch_processor:
+        type: features_with_text
+        params:
+          feature_key: xray
+          text_keys:
+          - ocr
+          label_key: label
+          id_key: fbid
+          processors:
+            text_processor:
+              type: multi_sentence_bert_tokenizer
+              params:
+                tokenizer_config:
+                  type: bert-base-uncased
+                  params:
+                    do_lower_case: true
+                mask_probability: 0
+                max_seq_length: 128
+                fusion: concat
+            feature_processor:
+              type: xray_hash
+              params: {}
+
+
+model_config:
+  mmbt:
+    direct_features_input: true
+    modal_encoder:
+      type: identity
+      params: {}
+    modal_hidden_size: 256
+
+
+scheduler:
+  type: warmup_linear
+  params:
+    num_warmup_steps: 2000
+    num_training_steps: ${training.max_updates}
+
+optimizer:
+  type: adam_w
+  params:
+    lr: 1e-5
+    eps: 1e-8
+
+evaluation:
+    metrics:
+    - binary_ap
+    - roc_auc
+    - type: r@pk
+      key: r@p50
+      params:
+        p_threshold: 50
+    - type: r@pk
+      key: r@p90
+      params:
+        p_threshold: 90
+
+training:
+  batch_size: 32
+  lr_scheduler: true
+  max_updates: 22000
+  early_stop:
+    criteria: hive/binary_ap
+    minimize: false

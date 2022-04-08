@@ -1,0 +1,6 @@
+2021-11-22T21:20:23 | INFO | mmf : Logging to: ./save/logs/train_2021_11_22T21_20_23.log.rank3
+2021-11-22T21:20:23 | INFO | mmf_cli.run : Namespace(config_override=None, local_rank=None, opts=['config=projects/visual_bert/configs/flickr30k/vinvl_itm_defaults.yaml', 'model=visual_bert', 'dataset=itm_flickr30k', 'run_type=train_val'])
+2021-11-22T21:20:23 | INFO | mmf_cli.run : Torch version: 1.8.1+cu102
+2021-11-22T21:20:23 | INFO | mmf.utils.general : CUDA Device 3 is: GeForce RTX 2080 Ti
+2021-11-22T21:20:23 | INFO | mmf_cli.run : Using seed 23587431
+2021-11-22T21:20:23 | INFO | mmf.trainers.mmf_trainer : Loading datasets

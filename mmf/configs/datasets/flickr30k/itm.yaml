@@ -1,0 +1,46 @@
+dataset_config:
+  itm_flickr30k:
+    data_dir: ${env.data_dir}/datasets
+    depth_first: false
+    fast_read: false
+    use_images: false
+    use_features: true
+    false_caption: true
+    zoo_requirements:
+    - flickr30k.defaults
+    features:
+      train:
+      - flickr30k/defaults/features/vinvl_detectron.lmdb
+      val:
+      - flickr30k/defaults/features/vinvl_detectron.lmdb
+      test:
+      - flickr30k/defaults/features/vinvl_detectron.lmdb
+    annotations:
+      train:
+      - flickr30k/defaults/annotations/flickr30k_itm_train.jsonl
+      val:
+      - flickr30k/defaults/annotations/flickr30k_itm_val.jsonl
+      test:
+      - fickr30k/defaults/annotations/flickr30k_itm_test.jsonl
+    max_features: 100
+    processors:
+      text_processor:
+        type: vocab
+        params:
+          max_length: 14
+          vocab:
+            type: intersected
+            embedding_name: glove.6B.300d
+            vocab_file: vocabs/vocabulary_100k.txt
+          preprocessor:
+            type: simple_sentence
+            params: {}
+      bbox_processor:
+        type: bbox
+        params:
+          max_length: 50
+    return_features_info: false
+    # Return OCR information
+    use_ocr: false
+    # Return spatial information of OCR tokens if present
+    use_ocr_info: false

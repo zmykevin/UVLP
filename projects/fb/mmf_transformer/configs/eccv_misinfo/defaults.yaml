@@ -1,0 +1,102 @@
+includes:
+- configs/models/mmf_transformer/defaults.yaml
+
+model_config:
+  mmf_transformer:
+    direct_features_input: true
+    modalities:
+    - type: text
+      key: post_text
+      segment_id: 0
+    - type: text
+      key: ocr_text
+      segment_id: 1
+    - type: image
+      key: image
+      embedding_dim: 256
+      position_dim: 1
+      segment_id: 2
+    image_encoder:
+      type: identity
+      params:
+        in_dim: 256
+    num_labels: 2
+    losses:
+    - cross_entropy
+
+# Please see fbcode/faim/mmf/mmf/datasets/fb/builders/hive/builder.py
+# for details on configuration
+dataset_config:
+  hive:
+    constructor:
+      namespace: feed
+      table: misinfo_before_dark_0310_features_2_with_val_2
+      partitions: null
+    set_name_key: set_name
+    set_name_mapping:
+      train: training
+      val: testing
+      test: testing
+    schema:
+    - content_id
+    - xray_hash
+    - post_text
+    - ocr_text
+    - is_misinfo
+    - set_name
+    filters: []
+    processors:
+      batch_processor:
+        type: features_with_text
+        params:
+          feature_key: xray_hash
+          text_keys:
+          - post_text
+          - ocr_text
+          label_key: is_misinfo
+          id_key: content_id
+          processors:
+            text_processor:
+              type: multi_sentence_bert_tokenizer
+              params:
+                tokenizer_config:
+                  type: bert-base-uncased
+                  params:
+                    do_lower_case: true
+                mask_probability: 0
+                max_seq_length: 128
+                fusion: stack
+            feature_processor:
+              type: xray_hash
+              params: {}
+
+scheduler:
+  type: warmup_linear
+  params:
+    num_warmup_steps: 2000
+    num_training_steps: ${training.max_updates}
+
+optimizer:
+  type: adam_w
+  params:
+    lr: 1e-5
+    eps: 1e-8
+
+evaluation:
+    metrics:
+    - binary_ap
+    - roc_auc
+
+training:
+  batch_size: 32
+  lr_scheduler: true
+  max_updates: 22000
+  early_stop:
+    criteria: hive/binary_ap
+    minimize: false
+
+checkpoint:
+  pretrained_state_mapping:
+    pooler: pooler
+    backend.transformer: backend.transformer
+    backend.embeddings: backend.embeddings

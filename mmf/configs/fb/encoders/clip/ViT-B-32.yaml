@@ -1,0 +1,25 @@
+image:
+  backbone: vit
+  embed_dim: 512
+  num_vision_layers: 12
+  vision_width: 768
+  vision_patch_size: 32
+  image_resolution: 224
+  vision_heads: 12
+  is_pretrained: true
+  pretrained_model:
+    url: https://dl.fbaipublicfiles.com/mmf/data/encoders/image_encoder_ViT-B-32.pt
+    hashcode: ea3789ef45ff7c7dcd5cbea5a855c98b7aa7014f60ef8b802b5577c715c35824
+    file_name: image_encoder_ViT-B-32.pt
+text:
+  embed_dim: 512
+  vocab_size: 49408
+  context_length: 77
+  transformer_width: 512
+  transformer_layers: 12
+  transformer_heads: 8
+  is_pretrained: true
+  pretrained_model:
+    url: https://dl.fbaipublicfiles.com/mmf/data/encoders/text_encoder_ViT-B-32.pt
+    hashcode: 3ea50eecaaa5b2b590a191eaa6352b4ccfab10afb91cc4c00b599c7e79f3e39d
+    file_name: text_encoder_ViT-B-32.pt
