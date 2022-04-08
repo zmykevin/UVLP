@@ -41,4 +41,4 @@ If you find this code useful for your research, please consider citing:
 Our code is developed on top of MMF. We thank the author and the collegues at Meta AI for their helpful discussion on code implementation. We also thank the anonymous reviewers for their constructive feedback. 
 
 # Liscense
-MIT
+BSD
