@@ -21,7 +21,7 @@ Our code only supports Linux with NVIDIA GPUs. We test our code on Ubuntu 18.04 
 # Pre-training
 
 # Downstream Task Fine-tuning
-## NLVR2
+### NLVR2
 1. Download data
 TODO: Add the repository to download the data
 2. Finetuning
