@@ -22,19 +22,34 @@ Our code only supports Linux with NVIDIA GPUs. We test our code on Ubuntu 18.04 
 
 # Downstream Task Fine-tuning
 ### NLVR2
-1. Download data
+**Download data**
 TODO: Add the repository to download the data
-2. Finetuning
+
+**Finetuning**
 ```
-CUDA_VISIBLE_DEVICES=0 mmf_run config=projects/visual_bert/configs/nlvr2/vinvl_defaults.yaml \
+mmf_run config=projects/visual_bert/configs/nlvr2/vinvl_defaults.yaml \
+run_type=train_val_test \
 model=visual_bert \ 
 dataset=nlvr2 \
 checkpoint.resume_pretrained=True \
 checkpoint.resume_file=/PATH/TO/MODEL/best.ckpt \ 
 env.save_dir=/PATH/TO/SAVE \
-training.fp16=True training.batch_size=8
+training.fp16=True 
 ```
-
+### RefCOCO+
+**Download data**
+   
+**Finetuning**
+```
+mmf_run config=projects/visual_bert/configs/refcoco/vinvl_defaults.yaml \
+run_type=train_val_test \
+model=visual_bert \
+dataset=refcoco \
+checkpoint.resume_pretrained=True \
+checkpoint.resume_file=/PATH/TO/MODEL/best.ckpt \ 
+env.save_dir=/PATH/TO/SAVE \
+training.fp16=True
+```
 # Citation
 If you find this code useful for your research, please consider citing: 
 ```
