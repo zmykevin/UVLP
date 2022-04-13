@@ -6,6 +6,14 @@
 This is the official repository of UVLP,  a retrieval-based unsupervised vision and language pre-training framework. In this repository we provide code to support the end-to-end pre-training and finetuning for [NLVR2](https://lil.nlp.cornell.edu/nlvr/) and [RefCOCO+](https://github.com/lichengunc/refer) Task.
 
 # Installation
+To use the code, we recommend to set up the conda virtual environment with the following command.
+```
+conda create -n mmf python=3.7
+conda activate mmf
+git clone https://github.com/zmykevin/UVLP.git
+cd UVLP
+pip install --editable .
+```
 
 # Data and Pretrained Checkpoints
 
