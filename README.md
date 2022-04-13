@@ -14,12 +14,26 @@ git clone https://github.com/zmykevin/UVLP.git
 cd UVLP
 pip install --editable .
 ```
+Our code only supports Linux with NVIDIA GPUs. We test our code on Ubuntu 18.04 and A100 cards.
 
 # Data and Pretrained Checkpoints
 
 # Pre-training
 
 # Downstream Task Fine-tuning
+## NLVR2
+1. Download data
+TODO: Add the repository to download the data
+2. Finetuning
+```
+CUDA_VISIBLE_DEVICES=0 mmf_run config=projects/visual_bert/configs/nlvr2/vinvl_defaults.yaml \
+model=visual_bert \ 
+dataset=nlvr2 \
+checkpoint.resume_pretrained=True \
+checkpoint.resume_file=/PATH/TO/MODEL/best.ckpt \ 
+env.save_dir=/PATH/TO/SAVE \
+training.fp16=True training.batch_size=8
+```
 
 # Citation
 If you find this code useful for your research, please consider citing: 
