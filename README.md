@@ -38,7 +38,7 @@ training.fp16=True training.batch_size=8
 # Citation
 If you find this code useful for your research, please consider citing: 
 ```
-@article{DBLP:journals/corr/abs-2203-00242,
+@inproceedings{zhou2022uvlp,
   author    = {Mingyang Zhou and
                Licheng Yu and
                Amanpreet Singh and
@@ -47,16 +47,8 @@ If you find this code useful for your research, please consider citing:
                Ning Zhang},
   title     = {Unsupervised Vision-and-Language Pre-training via Retrieval-based
                Multi-Granular Alignment},
-  journal   = {CoRR},
-  volume    = {abs/2203.00242},
-  year      = {2022},
-  url       = {https://doi.org/10.48550/arXiv.2203.00242},
-  doi       = {10.48550/arXiv.2203.00242},
-  eprinttype = {arXiv},
-  eprint    = {2203.00242},
-  timestamp = {Wed, 16 Mar 2022 16:39:52 +0100},
-  biburl    = {https://dblp.org/rec/journals/corr/abs-2203-00242.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  booktitle={CVPR}
+  year= {2022},
 }
 ```
 # Acknowledge
