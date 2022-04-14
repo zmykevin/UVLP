@@ -16,9 +16,16 @@ pip install --editable .
 ```
 Our code only supports Linux with NVIDIA GPUs. We test our code on Ubuntu 18.04 and A100 cards.
 
-# Data and Pretrained Checkpoints
-
 # Pre-training
+** Lauch Pretraining**
+After you prepare the visual features, change the dataset directory in your pretraining config file accordingly based on your saved visual feature directory. you can launch pretraining with the following command:
+```
+mmf_run config=projects/visual_bert/configs/masked_conceptual_captions/pretrain.yaml \
+run_type=train_val \
+model=visual_bert \
+dataset=masked_conceptual_captions,masked_conceptual_captions_image_tag,masked_conceptual_captions_image_phrase,itm_conceptual_captions \ env.save_dir=/PATH/TO/SAVE \
+training.fp16=True 
+```
 
 # Downstream Task Fine-tuning
 ### NLVR2
