@@ -13,10 +13,10 @@ import os.path as op
 import base64
 import logging
 
+import argparse
+
 PathManager = pm()
 
-#ORIGINAL_COCO_PATH = "/fsx/zmykevin/data/mmf_data/datasets/coco/defaults/features/test2015.lmdb"
-ORIGINAL_COCO_PATH = "/home/zmykevin/fb_intern/data/mmf_data/datasets/flickr30k/features/detectron.lmdb"
 MAX_SIZE = 1333
 MIN_SIZE = 800
 
@@ -97,10 +97,10 @@ class LMDBCreater:
         with env.begin(write=True) as txn:
             for feature, info in zip(features, infos):
                 item = {}
-                #item["feature_path"] = info['feature_path']
-                item['image_id'] = info['image_id']
-                # key = info['image_id'].encode()
-                key = info['feature_path'].encode()
+                item["image_id"] = info['image_id']
+                item["feature_path"] = info['feature_path']
+                key = str(info['image_id']).encode()
+                #print(key)
                 id_list.append(key)
                 #Create a structured array
                 info["features"] = feature
@@ -116,6 +116,7 @@ class LMDBCreater:
                 
                 txn.put(key, pickle.dumps(item))
             txn.put(b"keys", pickle.dumps(id_list))
+        del txn
                 
 class PaddedFasterRCNNFeatureReader:
     def __init__(self, max_loc):
@@ -263,88 +264,87 @@ def normalize_bbox(bbox, im_shape):
     normalized_bbox = [x/im_scale for x in bbox]
     return normalized_bbox
 
-#Lets load the VinVL Features
-coco_vinvl_path = "/home/zmykevin/fb_intern/data/flickr30k/model_0060000"
-#coco_vinvl_path = "/data/home/zmykevin/vinvl_data/Flickr30K"
-#coco_vinvl_path = "/data/home/zmykevin/vinvl_data/nlvr2/nlvr2_features/nlvr2_X152C4_frcnnbig2_exp168model_0060000model.roi_heads.nm_filter_2_model.roi_heads.score_thresh_0.2/test/inference/model_0060000"
-coco_vinvl_feature_tsv = TSVFile(os.path.join(coco_vinvl_path, "features.tsv"))
-coco_vinvl_prediction_tsv = TSVFile(os.path.join(coco_vinvl_path, "predictions.tsv"))
-# coco_vinvl_id2index = json.load(open(os.path.join(coco_vinvl_path, "imageid2idx.json"), "r"))
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    #Add argument
+    parser.add_argument('--chunk_id', type=int, help="the start chunk id for the features")
+    args = parser.parse_args()
 
-
-
-max_feat = 30
-FEAT_READER = LMDBFeatureReader(max_feat, ORIGINAL_COCO_PATH)
-
-
-
-feat_list = []
-info_list = []
-for i in tqdm(range(coco_vinvl_feature_tsv.num_rows())):
-    assert coco_vinvl_prediction_tsv.seek(i)[0] == coco_vinvl_feature_tsv.seek(i)[0]
-    #img_id = coco_vinvl_feature_tsv.seek(i)[0].zfill(12)
-    img_id = coco_vinvl_feature_tsv.seek(i)[0]
-    #print(img_id)
-    #Retrieve the original feats, and sample_info
-    #splits = ["train2014", "val2014"]
-    # splits = ["test2015"]
-
-    # for split in splits:
-    #     if "test" in split:
-    #         img_file_path = os.path.join(ORIGINAL_COCO_PATH, "{}.npy".format(img_id))
-    #         try:
-    #             sample_feats, sample_info = FEAT_READER.read(img_file_path)
-    #             continue
-    #         except:
-    #             continue
-    #     else:
-    #         img_file_path = os.path.join(ORIGINAL_COCO_PATH, "COCO_{}_{}.npy".format(split, img_id))
-    #         try:
-    #             sample_feats, sample_info = FEAT_READER.read(img_file_path)
-    #             continue
-    #         except:
-    #             continue
-    img_file_path = os.path.join(ORIGINAL_COCO_PATH, "flickr30k_{}.npy".format(img_id))
-    try:
-        sample_feats, sample_info = FEAT_READER.read(img_file_path)
-    except:
-        continue
     
-    #replace feats with current information
-    vinvl_num_boxes = int(coco_vinvl_feature_tsv.seek(i)[1])
-    vinvl_feature = np.frombuffer(base64.b64decode(coco_vinvl_feature_tsv.seek(i)[2]), np.float32
-                ).reshape((vinvl_num_boxes, -1))[:,:2048]
-    vinvl_prediction = json.loads(coco_vinvl_prediction_tsv.seek(i)[1])
+    #########################Change these linens based on you saved data directory#######################
+    coco_vinvl_parent_path = "/home/zmykevin/fb_intern/data/vinvl_data/CC"
+    annotation = "/home/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/annotations/dataset_cc.json"
+    output_directory = "/PATH/TO/OUTPUT/IMAGE/FEATURES"
+    #####################################################################################################
     
-    #update the new num_box, bbox, objects and cls_prob can be reduced to the new num_boxes
-    sample_feats_changed = vinvl_feature
-    #print(sample_feats_changed.shape)
-    sample_info_changed = sample_info.copy()
-    #sample_info_changed['num_boxes'] = vinvl_num_boxes if vinvl_num_boxes < 100 else 100
-    sample_info_changed['num_boxes'] = vinvl_num_boxes
+    annotation_data = json.load(open(annotation, "r"))
+    annotation_split = {x['imgid']:x['split'] for x in annotation_data['images']}
 
-    #update the bbox information
-    updated_bbox = np.array([normalize_bbox(obj['rect'],[sample_info_changed["image_height"],sample_info_changed["image_width"]]) for obj in vinvl_prediction['objects']])
+    id_range = [0,1,2,3,4,5,6,7,8,9,10,11]
+    #id_range = [args.chunk_id]
+    #id_range = [args.chunk_id,args.chunk_id+1,args.chunk_id+2] #WHere validation is located
+    feat_list = []
+    info_list = []
+    for id_ in id_range: 
+        print("Create the features for chunk {}".format(id_))
+        #Lets load the VinVL Features
+        #coco_vinvl_path = "/data/home/zmykevin/vinvl_data/CC/model_0060000/{}".format(id_)
+        coco_vinvl_path = "{}/model_0060000/{}".format(coco_vinvl_parent_path, id_)
+        coco_vinvl_feature_tsv = TSVFile(os.path.join(coco_vinvl_path, "features.tsv"))
+        coco_vinvl_prediction_tsv = TSVFile(os.path.join(coco_vinvl_path, "predictions.tsv"))
+        coco_vinvl_id2index = json.load(open(os.path.join(coco_vinvl_path, "imageid2idx.json"), "r"))
 
-    sample_info_changed['bbox'] = updated_bbox
+        num_rows = coco_vinvl_prediction_tsv.num_rows()
+        for i in tqdm(range(num_rows)):
+            #assert coco_vinvl_prediction_tsv.seek(i)[0] == coco_vinvl_feature_tsv.seek(i)[0]
+            current_prediction = coco_vinvl_prediction_tsv.seek(i)
+            
+            img_id = int(current_prediction[0])#check the original img_id
+            #print(img_id)
+            
+            assert annotation_split.get(img_id, None) is not None
+            if annotation_split.get(img_id, None) != "train":
+                continue
+            current_feature = coco_vinvl_feature_tsv.seek(i)
+            vinvl_num_boxes = int(current_feature[1])
+            vinvl_feature = np.frombuffer(base64.b64decode(current_feature[2]), np.float32
+                        ).reshape((vinvl_num_boxes, -1))[:,:2048]
+            vinvl_prediction = json.loads(current_prediction[1])
+            
 
-    #update the dimension for objects, and cls_prob
-    sample_info_changed['objects'] = np.zeros(sample_info_changed['num_boxes'], np.int32)
-    sample_info_changed['cls_prob'] = np.zeros((sample_info_changed['num_boxes'],1601))
-    
-    if sample_info_changed.get("feature_path", None) is None:
-        sample_info_changed["feature_path"] = img_id
-    #append it to feat_list and info_list
-    feat_list.append(sample_feats_changed)
-    info_list.append(sample_info_changed)
-    
+            sample_feats_changed = vinvl_feature
+            sample_info_changed = {}0
+            sample_info_changed['image_id'] = img_id
+            sample_info_changed['feature_path'] = 'cc_{}'.format(img_id)
 
-#lmdb_path = "/fsx/zmykevin/data/mmf_data/datasets/coco/defaults/features/test2015_vinvl_nopadding.lmdb"
-#lmdb_path = "/fsx/zmykevin/data/mmf_data/datasets/flickr30k/defaults/features/vinvl_detectron.lmdb"
-lmdb_path = "/home/zmykevin/fb_intern/data/mmf_data/datasets/flickr30k/features/vinvl_detectron.lmdb"
-lmdb_creater = LMDBCreater(lmdb_path)
-lmdb_creater.create(feat_list, info_list)
+            #load the image height and width
+            sample_info_changed['image_height'] = vinvl_prediction['image_h']
+            sample_info_changed['image_width'] = vinvl_prediction['image_w']
 
+            sample_info_changed['num_boxes'] = vinvl_num_boxes
+
+            #update the bbox information
+            updated_bbox = np.array([normalize_bbox(obj['rect'],[sample_info_changed["image_height"],sample_info_changed["image_width"]]) for obj in vinvl_prediction['objects']])
+            sample_info_changed['bbox'] = updated_bbox
+
+            #update the dimension for objects, and cls_prob
+            sample_info_changed['objects'] = np.zeros(sample_info_changed['num_boxes'], np.int32)
+            sample_info_changed['cls_prob'] = np.zeros((sample_info_changed['num_boxes'],1601))
+            
+            #append it to feat_list and info_list
+            feat_list.append(sample_feats_changed)
+            info_list.append(sample_info_changed)
+            
+    assert len(feat_list) == len(info_list)
+    # print(len(feat_list))
+
+            
+        
+        
+    lmdb_path = "{}/cc_vinvl_train_{}.lmdb".format(output_directory, id_range[0])
+    lmdb_creater = LMDBCreater(lmdb_path)
+    lmdb_creater.create(feat_list, info_list)
+    print("save the lmdb {}".format(id_range[0]))
 
 
 

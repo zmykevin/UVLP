@@ -14,11 +14,11 @@ dataset_config:
     return_features_info: true
     features:
       train:
-      - /data/zmykevin/fb_intern/data/mmf_data/datasets/vqa2/defaults/features/trainval2014_vinvl_nopadding.lmdb
+      - /data/zmykevin/fb_intern/data/mmf_data/datasets/refcoco/defaults/features/trainval2014_vinvl_nopadding.lmdb
       val:
-      - /data/zmykevin/fb_intern/data/mmf_data/datasets/vqa2/defaults/features/trainval2014_vinvl_nopadding.lmdb
+      - /data/zmykevin/fb_intern/data/mmf_data/datasets/refcoco/defaults/features/trainval2014_vinvl_nopadding.lmdb
       test:
-      - /data/zmykevin/fb_intern/data/mmf_data/datasets/vqa2/defaults/features/trainval2014_vinvl_nopadding.lmdb
+      - /data/zmykevin/fb_intern/data/mmf_data/datasets/refcoco/defaults/features/trainval2014_vinvl_nopadding.lmdb
     annotations:
       train:
       - /data/zmykevin/fb_intern/data/mmf_data/datasets/refcoco/defaults/annotations/refcoco_plus_train.jsonl
