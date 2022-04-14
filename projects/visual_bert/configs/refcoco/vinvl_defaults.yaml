@@ -14,18 +14,18 @@ dataset_config:
     return_features_info: true
     features:
       train:
-      - vqa2/defaults/features/trainval2014_vinvl_nopadding.lmdb
+      - /data/zmykevin/fb_intern/data/mmf_data/datasets/vqa2/defaults/features/trainval2014_vinvl_nopadding.lmdb
       val:
-      - vqa2/defaults/features/trainval2014_vinvl_nopadding.lmdb
+      - /data/zmykevin/fb_intern/data/mmf_data/datasets/vqa2/defaults/features/trainval2014_vinvl_nopadding.lmdb
       test:
-      - vqa2/defaults/features/trainval2014_vinvl_nopadding.lmdb
+      - /data/zmykevin/fb_intern/data/mmf_data/datasets/vqa2/defaults/features/trainval2014_vinvl_nopadding.lmdb
     annotations:
       train:
-      - refcoco/defaults/annotations/refcoco_plus_train.jsonl
+      - /data/zmykevin/fb_intern/data/mmf_data/datasets/refcoco/defaults/annotations/refcoco_plus_train.jsonl
       val:
-      - refcoco/defaults/annotations/refcoco_plus_dev.jsonl
+      - /data/zmykevin/fb_intern/data/mmf_data/datasets/refcoco/defaults/annotations/refcoco_plus_dev.jsonl
       test:
-      - refcoco/defaults/annotations/refcoco_plus_testA.jsonl
+      - /data/zmykevin/fb_intern/data/mmf_data/datasets/refcoco/defaults/annotations/refcoco_plus_testA.jsonl
     processors:
       text_processor:
         type: bert_tokenizer

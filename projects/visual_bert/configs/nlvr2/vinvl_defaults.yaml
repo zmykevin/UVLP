@@ -16,18 +16,18 @@ dataset_config:
       use_features: true
       features:
           train:
-          - /home/zmykevin/fb_intern/data/mmf_data/datasets/nlvr2/defaults/features/train_vinvl.lmdb
+          - /data/zmykevin/fb_intern/data/mmf_data/datasets/nlvr2/defaults/features/train_vinvl.lmdb
           val:
-          - /home/zmykevin/fb_intern/data/mmf_data/datasets/nlvr2/defaults/features/dev_vinvl.lmdb
+          - /data/zmykevin/fb_intern/data/mmf_data/datasets/nlvr2/defaults/features/dev_vinvl.lmdb
           test:
-          - /home/zmykevin/fb_intern/data/mmf_data/datasets/nlvr2/defaults/features/test_vinvl.lmdb
+          - /data/zmykevin/fb_intern/data/mmf_data/datasets/nlvr2/defaults/features/test_vinvl.lmdb
       annotations:
           train:
-          - /home/zmykevin/fb_intern/data/mmf_data/datasets/nlvr2/defaults/annotations/train.jsonl
+          - /data/zmykevin/fb_intern/data/mmf_data/datasets/nlvr2/defaults/annotations/train.jsonl
           val:
-          - /home/zmykevin/fb_intern/data/mmf_data/datasets/nlvr2/defaults/annotations/dev.jsonl
+          - /data/zmykevin/fb_intern/data/mmf_data/datasets/nlvr2/defaults/annotations/dev.jsonl
           test:
-          - /home/zmykevin/fb_intern/data/mmf_data/datasets/nlvr2/defaults/annotations/test1.jsonl
+          - /data/zmykevin/fb_intern/data/mmf_data/datasets/nlvr2/defaults/annotations/test1.jsonl
       max_features: 100
       processors:
         text_processor:
@@ -69,11 +69,12 @@ evaluation:
 
 training:
   #batch_size: 480
-  batch_size: 60
+  batch_size: 40
   lr_scheduler: true
   # Don't forget to update schedule_attributes if you update this
   max_updates: 14000
   find_unused_parameters: true
+  tensorboard: true
   early_stop:
     criteria: nlvr2/accuracy
     minimize: false

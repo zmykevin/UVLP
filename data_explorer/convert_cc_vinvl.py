@@ -17,7 +17,6 @@ import argparse
 
 PathManager = pm()
 
-ORIGINAL_COCO_PATH = "/fsx/zmykevin/data/mmf_data/datasets/coco/defaults/features/test2015.lmdb"
 MAX_SIZE = 1333
 MIN_SIZE = 800
 
@@ -271,14 +270,17 @@ if __name__ == "__main__":
     parser.add_argument('--chunk_id', type=int, help="the start chunk id for the features")
     args = parser.parse_args()
 
-    #Load the annotation
-    #annotation = "/data/home/zmykevin/vinvl_data/CC/model_0060000/annotations/0/dataset_cc.json"
-    #annotation = "/checkpoint/zmykevin/vinvl_data/cc/dataset/dataset_cc.json"
+    
+    #########################Change these linens based on you saved data directory#######################
+    coco_vinvl_parent_path = "/home/zmykevin/fb_intern/data/vinvl_data/CC"
     annotation = "/home/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/annotations/dataset_cc.json"
+    output_directory = "/PATH/TO/OUTPUT/IMAGE/FEATURES"
+    #####################################################################################################
+    
     annotation_data = json.load(open(annotation, "r"))
     annotation_split = {x['imgid']:x['split'] for x in annotation_data['images']}
 
-    id_range = [11]
+    id_range = [0,1,2,3,4,5,6,7,8,9,10,11]
     #id_range = [args.chunk_id]
     #id_range = [args.chunk_id,args.chunk_id+1,args.chunk_id+2] #WHere validation is located
     feat_list = []
@@ -287,7 +289,7 @@ if __name__ == "__main__":
         print("Create the features for chunk {}".format(id_))
         #Lets load the VinVL Features
         #coco_vinvl_path = "/data/home/zmykevin/vinvl_data/CC/model_0060000/{}".format(id_)
-        coco_vinvl_path = "/home/zmykevin/fb_intern/data/vinvl_data/CC/model_0060000/{}".format(id_)
+        coco_vinvl_path = "{}/model_0060000/{}".format(coco_vinvl_parent_path, id_)
         coco_vinvl_feature_tsv = TSVFile(os.path.join(coco_vinvl_path, "features.tsv"))
         coco_vinvl_prediction_tsv = TSVFile(os.path.join(coco_vinvl_path, "predictions.tsv"))
         coco_vinvl_id2index = json.load(open(os.path.join(coco_vinvl_path, "imageid2idx.json"), "r"))
@@ -309,15 +311,9 @@ if __name__ == "__main__":
                         ).reshape((vinvl_num_boxes, -1))[:,:2048]
             vinvl_prediction = json.loads(current_prediction[1])
             
-            #update the new num_box, bbox, objects and cls_prob can be reduced to the new num_boxes
-            # if vinvl_num_boxes < max_feat:
-            #     sample_feats_changed = np.concatenate((vinvl_feature, np.zeros((max_feat-vinvl_num_boxes, 2048))))
-            # else:
-            #     sample_feats_changed = vinvl_feature[:max_feat]
+
             sample_feats_changed = vinvl_feature
-            #print(sample_feats_changed.shape)
-            sample_info_changed = {}
-            #sample_info_changed['num_boxes'] = vinvl_num_boxes if vinvl_num_boxes < 100 else 100
+            sample_info_changed = {}0
             sample_info_changed['image_id'] = img_id
             sample_info_changed['feature_path'] = 'cc_{}'.format(img_id)
 
@@ -329,10 +325,6 @@ if __name__ == "__main__":
 
             #update the bbox information
             updated_bbox = np.array([normalize_bbox(obj['rect'],[sample_info_changed["image_height"],sample_info_changed["image_width"]]) for obj in vinvl_prediction['objects']])
-
-            # if vinvl_num_boxes < max_feat:
-            #     sample_info_changed['bbox'] = np.concatenate((updated_bbox, np.zeros((max_feat-vinvl_num_boxes, 4))))
-            # else:
             sample_info_changed['bbox'] = updated_bbox
 
             #update the dimension for objects, and cls_prob
@@ -344,15 +336,12 @@ if __name__ == "__main__":
             info_list.append(sample_info_changed)
             
     assert len(feat_list) == len(info_list)
-    print(len(feat_list))
+    # print(len(feat_list))
 
             
         
         
-
-    #lmdb_path = "/fsx/zmykevin/data/mmf_data/datasets/cc/defaults/features/lmdbs/cc_vinvl_train_{}.lmdb".format(args.chunk_id)
-    #lmdb_path = "/checkpoint/zmykevin/mmf_data/cc/features/lmdbs/cc_vinvl_train_{}.lmdb".format(args.chunk_id)
-    lmdb_path = "/home/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/features/lmdbs/cc_vinvl_train_{}.lmdb".format(id_range[0])
+    lmdb_path = "{}/cc_vinvl_train_{}.lmdb".format(output_directory, id_range[0])
     lmdb_creater = LMDBCreater(lmdb_path)
     lmdb_creater.create(feat_list, info_list)
     print("save the lmdb {}".format(id_range[0]))

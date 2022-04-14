@@ -11,6 +11,7 @@ data_explorer/Caption_Retrieval_BertEmbedding.py
 data_explorer/Caption_Retrieval_BertEmbedding_Bookcorpus.py
 data_explorer/Caption_Retrieve.py
 data_explorer/Copy_CC.py
+data_explorer/Download_CC_Image.py
 data_explorer/__init__.py
 data_explorer/clip_score_distribution.py
 data_explorer/compute_nmi.py
@@ -18,6 +19,7 @@ data_explorer/compute_recallK.py
 data_explorer/convert_cc_vinvl.py
 data_explorer/convert_nlvr_vinvl.py
 data_explorer/convert_vinvl.py
+data_explorer/create_itm_eval.py
 data_explorer/explore_cc.py
 data_explorer/extract_np.py
 data_explorer/np_object_cos_sim.py
@@ -653,6 +655,7 @@ mmf/projects/visual_bert/configs/masked_coco/pretrain_train_val.yaml
 mmf/projects/visual_bert/configs/masked_conceptual_captions/all_bc.yaml
 mmf/projects/visual_bert/configs/masked_conceptual_captions/debug.yaml
 mmf/projects/visual_bert/configs/masked_conceptual_captions/defaults.yaml
+mmf/projects/visual_bert/configs/masked_conceptual_captions/itm_evaluation.yaml
 mmf/projects/visual_bert/configs/masked_conceptual_captions/phrase_region.yaml
 mmf/projects/visual_bert/configs/masked_conceptual_captions/pretrain.yaml
 mmf/projects/visual_bert/configs/masked_conceptual_captions/sentence_img.yaml
@@ -679,6 +682,8 @@ mmf/projects/visual_bert/configs/masked_conceptual_captions/vinvl_text_data_conf
 mmf/projects/visual_bert/configs/masked_conceptual_captions/vinvl_text_defaults.yaml
 mmf/projects/visual_bert/configs/masked_conceptual_captions/vinvl_tfidf_caption_defaults.yaml
 mmf/projects/visual_bert/configs/masked_conceptual_captions/vinvl_ucla_tags_defaults.yaml
+mmf/projects/visual_bert/configs/masked_conceptual_captions/vinvl_unparallel_bc_defaults.yaml
+mmf/projects/visual_bert/configs/masked_conceptual_captions/vinvl_unparallel_bc_round_and_robin_defaults.yaml
 mmf/projects/visual_bert/configs/masked_conceptual_captions/vinvl_unparallel_defaults.yaml
 mmf/projects/visual_bert/configs/masked_gqa/defaults.yaml
 mmf/projects/visual_bert/configs/masked_sbu/defaults.yaml
@@ -1056,6 +1061,7 @@ projects/visual_bert/configs/masked_conceptual_captions/._vinvl_unparallel_defau
 projects/visual_bert/configs/masked_conceptual_captions/all_bc.yaml
 projects/visual_bert/configs/masked_conceptual_captions/debug.yaml
 projects/visual_bert/configs/masked_conceptual_captions/defaults.yaml
+projects/visual_bert/configs/masked_conceptual_captions/itm_evaluation.yaml
 projects/visual_bert/configs/masked_conceptual_captions/phrase_region.yaml
 projects/visual_bert/configs/masked_conceptual_captions/pretrain.yaml
 projects/visual_bert/configs/masked_conceptual_captions/sentence_img.yaml
@@ -1082,6 +1088,8 @@ projects/visual_bert/configs/masked_conceptual_captions/vinvl_text_data_config.y
 projects/visual_bert/configs/masked_conceptual_captions/vinvl_text_defaults.yaml
 projects/visual_bert/configs/masked_conceptual_captions/vinvl_tfidf_caption_defaults.yaml
 projects/visual_bert/configs/masked_conceptual_captions/vinvl_ucla_tags_defaults.yaml
+projects/visual_bert/configs/masked_conceptual_captions/vinvl_unparallel_bc_defaults.yaml
+projects/visual_bert/configs/masked_conceptual_captions/vinvl_unparallel_bc_round_and_robin_defaults.yaml
 projects/visual_bert/configs/masked_conceptual_captions/vinvl_unparallel_defaults.yaml
 projects/visual_bert/configs/masked_gqa/defaults.yaml
 projects/visual_bert/configs/masked_sbu/defaults.yaml
