@@ -16,7 +16,8 @@ pip install --editable .
 ```
 Our code only supports Linux with NVIDIA GPUs. We test our code on Ubuntu 18.04 and A100 cards.
 # Pre-trained Checkpoints and Dataset
-Download the pre-trained checkpoints and Dataset from this link (TODO: Add the Google Drive Link). 
+Download the pre-trained checkpoints and Dataset from [here](https://drive.google.com/file/d/1zekXYjt-bnf0UQhZY3Q5xL2A6okUt7pV/view?usp=sharing).
+
 The visual features for CC is too large to be uploaded to the cloud drive. You can generate the CC features for pre-traning with the following steps:
 1. Download the CC feature from the [VinVL Repository](https://github.com/pzzhang/VinVL/blob/main/DOWNLOAD.md)
 2. Run the following command to generate the CC Visual Features
