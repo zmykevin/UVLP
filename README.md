@@ -20,7 +20,7 @@ Download the pre-trained checkpoints and Dataset from [here](https://drive.googl
 
 The visual features for CC is too large to be uploaded to the cloud drive. You can generate the CC features for pre-traning with the following steps:
 1. Download the CC feature from the [VinVL Repository](https://github.com/pzzhang/VinVL/blob/main/DOWNLOAD.md)
-2. Run the following command to generate the CC Visual Features
+2. Change [these lines](https://github.com/zmykevin/UVLP/blob/35ab9955bc67e0f15b97c3ec07b05a7acf2229ea/data_preparation/convert_cc_vinvl.py#L275-L277) based on your saved feature path (dataset_cc.json is included in the downnloaded tar file). Run the following command to generate the CC Visual Features
 ```
 python data_preparation/convert_cc_vinvl.py
 ```
