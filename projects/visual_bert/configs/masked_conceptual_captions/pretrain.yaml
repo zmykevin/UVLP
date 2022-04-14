@@ -22,45 +22,37 @@ dataset_config:
       use_image_feature_masks: true
       mrtm_enabled: true
       features:
-        # train:
-        # - cc/defaults/features/lmdbs/cc_vinvl_train_0.lmdb
-        # - cc/defaults/features/lmdbs/cc_vinvl_train_1.lmdb
-        # - cc/defaults/features/lmdbs/cc_vinvl_train_2.lmdb
-        # - cc/defaults/features/lmdbs/cc_vinvl_train_3.lmdb
-        # - cc/defaults/features/lmdbs/cc_vinvl_train_4.lmdb
-        # - cc/defaults/features/lmdbs/cc_vinvl_train_5.lmdb
-        # - cc/defaults/features/lmdbs/cc_vinvl_train_6.lmdb
-        # - cc/defaults/features/lmdbs/cc_vinvl_train_7.lmdb
-        # - cc/defaults/features/lmdbs/cc_vinvl_train_8.lmdb
-        # - cc/defaults/features/lmdbs/cc_vinvl_train_9.lmdb
-        # - cc/defaults/features/lmdbs/cc_vinvl_train_10.lmdb
-        # - cc/defaults/features/lmdbs/cc_vinvl_train_11.lmdb
-        # # train:
-        # # - cc/defaults/features/lmdbs/cc_vinvl_train_9.lmdb
         train:
-        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/features/lmdbs/cc_vinvl_val.lmdb
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/features/lmdbs/cc_vinvl_train_0.lmdb
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/features/lmdbs/cc_vinvl_train_1.lmdb
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/features/lmdbs/cc_vinvl_train_2.lmdb
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/features/lmdbs/cc_vinvl_train_3.lmdb
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/features/lmdbs/cc_vinvl_train_4.lmdb
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/features/lmdbs/cc_vinvl_train_5.lmdb
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/features/lmdbs/cc_vinvl_train_6.lmdb
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/features/lmdbs/cc_vinvl_train_7.lmdb
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/features/lmdbs/cc_vinvl_train_8.lmdb
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/features/lmdbs/cc_vinvl_train_9.lmdb
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/features/lmdbs/cc_vinvl_train_10.lmdb
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/features/lmdbs/cc_vinvl_train_11.lmdb
         val:
         - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/features/lmdbs/cc_vinvl_val.lmdb
         test:
         - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/features/lmdbs/cc_vinvl_val.lmdb
       annotations:
-        # train:
-        # - cc/defaults/annotations/train_vinvl_sbert_cc_nps_0.npy
-        # - cc/defaults/annotations/train_vinvl_sbert_cc_nps_1.npy
-        # - cc/defaults/annotations/train_vinvl_sbert_cc_nps_2.npy
-        # - cc/defaults/annotations/train_vinvl_sbert_cc_nps_3.npy
-        # - cc/defaults/annotations/train_vinvl_sbert_cc_nps_4.npy
-        # - cc/defaults/annotations/train_vinvl_sbert_cc_nps_5.npy
-        # - cc/defaults/annotations/train_vinvl_sbert_cc_nps_6.npy
-        # - cc/defaults/annotations/train_vinvl_sbert_cc_nps_7.npy
-        # - cc/defaults/annotations/train_vinvl_sbert_cc_nps_8.npy
-        # - cc/defaults/annotations/train_vinvl_sbert_cc_nps_9.npy
-        # - cc/defaults/annotations/train_vinvl_sbert_cc_nps_10.npy
-        # - cc/defaults/annotations/train_vinvl_sbert_cc_nps_11.npy
-        # train:
-        # - cc/defaults/annotations/train_vinvl_sbert_retrieved_sorted_all_nps_cs_mini_fixed.npy
         train:
-        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/annotations/val_vinvl_itm_fixed.npy
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/annotations/train_cc_0.npy
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/annotations/train_cc_1.npy
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/annotations/train_cc_2.npy
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/annotations/train_cc_3.npy
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/annotations/train_cc_4.npy
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/annotations/train_cc_5.npy
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/annotations/train_cc_6.npy
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/annotations/train_cc_7.npy
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/annotations/train_cc_8.npy
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/annotations/train_cc_9.npy
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/annotations/train_cc_10.npy
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/annotations/train_cc_11.npy
         val:
         - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/annotations/val_vinvl_itm_fixed.npy
         test:
@@ -89,40 +81,41 @@ dataset_config:
       false_caption: false
       two_sentence: false
       features:
-        # train:
-        # - cc/defaults/features/lmdbs/cc_vinvl_train_0.lmdb
-        # - cc/defaults/features/lmdbs/cc_vinvl_train_1.lmdb
-        # - cc/defaults/features/lmdbs/cc_vinvl_train_2.lmdb
-        # - cc/defaults/features/lmdbs/cc_vinvl_train_3.lmdb
-        # - cc/defaults/features/lmdbs/cc_vinvl_train_6.lmdb
-        # - cc/defaults/features/lmdbs/cc_vinvl_train_7.lmdb
-        # - cc/defaults/features/lmdbs/cc_vinvl_train_8.lmdb
-        # - cc/defaults/features/lmdbs/cc_vinvl_train_9.lmdb
-        # train:
-        # - cc/defaults/features/lmdbs/cc_vinvl_val.lmdb
         train:
-        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/features/lmdbs/cc_vinvl_val.lmdb
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/features/lmdbs/cc_vinvl_train_0.lmdb
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/features/lmdbs/cc_vinvl_train_1.lmdb
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/features/lmdbs/cc_vinvl_train_2.lmdb
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/features/lmdbs/cc_vinvl_train_3.lmdb
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/features/lmdbs/cc_vinvl_train_4.lmdb
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/features/lmdbs/cc_vinvl_train_5.lmdb
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/features/lmdbs/cc_vinvl_train_6.lmdb
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/features/lmdbs/cc_vinvl_train_7.lmdb
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/features/lmdbs/cc_vinvl_train_8.lmdb
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/features/lmdbs/cc_vinvl_train_9.lmdb
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/features/lmdbs/cc_vinvl_train_10.lmdb
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/features/lmdbs/cc_vinvl_train_11.lmdb
         val:
         - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/features/lmdbs/cc_vinvl_val.lmdb
         test:
         - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/features/lmdbs/cc_vinvl_val.lmdb
       annotations:
-        # train:
-        # - cc/defaults/annotations/train_vinvl_ucla_tags_fixed_0.npy
-        # - cc/defaults/annotations/train_vinvl_ucla_tags_fixed_1.npy
-        # - cc/defaults/annotations/train_vinvl_ucla_tags_fixed_2.npy
-        # - cc/defaults/annotations/train_vinvl_ucla_tags_fixed_3.npy
-        # - cc/defaults/annotations/train_vinvl_ucla_tags_fixed_6.npy
-        # - cc/defaults/annotations/train_vinvl_ucla_tags_fixed_7.npy
-        # - cc/defaults/annotations/train_vinvl_ucla_tags_fixed_8.npy
-        # - cc/defaults/annotations/train_vinvl_ucla_tags_fixed_9.npy
         train:
-        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/annotations/val_vinvl_itm_fixed.npy
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/annotations/train_cc_0.npy
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/annotations/train_cc_1.npy
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/annotations/train_cc_2.npy
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/annotations/train_cc_3.npy
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/annotations/train_cc_4.npy
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/annotations/train_cc_5.npy
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/annotations/train_cc_6.npy
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/annotations/train_cc_7.npy
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/annotations/train_cc_8.npy
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/annotations/train_cc_9.npy
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/annotations/train_cc_10.npy
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/annotations/train_cc_11.npy
         val:
         - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/annotations/val_vinvl_itm_fixed.npy
         test:
         - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/annotations/val_vinvl_itm_fixed.npy
-
       processors:
         masked_token_processor:
           type: masked_token_image_tag
@@ -143,37 +136,41 @@ dataset_config:
     false_caption: true
     two_sentence: false
     features:
-      # train:
-      # - cc/defaults/features/lmdbs/cc_vinvl_train_0.lmdb
-      # - cc/defaults/features/lmdbs/cc_vinvl_train_1.lmdb
-      # - cc/defaults/features/lmdbs/cc_vinvl_train_2.lmdb
-      # - cc/defaults/features/lmdbs/cc_vinvl_train_3.lmdb
-      # - cc/defaults/features/lmdbs/cc_vinvl_train_6.lmdb
-      # - cc/defaults/features/lmdbs/cc_vinvl_train_7.lmdb
-      # - cc/defaults/features/lmdbs/cc_vinvl_train_8.lmdb
-      # - cc/defaults/features/lmdbs/cc_vinvl_train_9.lmdb
-      train:
-      - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/features/lmdbs/cc_vinvl_val.lmdb
-      val:
-      - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/features/lmdbs/cc_vinvl_val.lmdb
-      test:
-      - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/features/lmdbs/cc_vinvl_val.lmdb
-    annotations:
-      # train:
-      # - cc/defaults/annotations/train_vinvl_sbert_cc_0.npy
-      # - cc/defaults/annotations/train_vinvl_sbert_cc_1.npy
-      # - cc/defaults/annotations/train_vinvl_sbert_cc_2.npy
-      # - cc/defaults/annotations/train_vinvl_sbert_cc_3.npy
-      # - cc/defaults/annotations/train_vinvl_sbert_cc_6.npy
-      # - cc/defaults/annotations/train_vinvl_sbert_cc_7.npy
-      # - cc/defaults/annotations/train_vinvl_sbert_cc_8.npy
-      # - cc/defaults/annotations/train_vinvl_sbert_cc_9.npy
-      train:
-      - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/annotations/val_vinvl_itm_fixed.npy
-      val:
-      - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/annotations/val_vinvl_itm_fixed.npy
-      test:
-      - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/annotations/val_vinvl_itm_fixed.npy
+        train:
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/features/lmdbs/cc_vinvl_train_0.lmdb
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/features/lmdbs/cc_vinvl_train_1.lmdb
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/features/lmdbs/cc_vinvl_train_2.lmdb
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/features/lmdbs/cc_vinvl_train_3.lmdb
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/features/lmdbs/cc_vinvl_train_4.lmdb
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/features/lmdbs/cc_vinvl_train_5.lmdb
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/features/lmdbs/cc_vinvl_train_6.lmdb
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/features/lmdbs/cc_vinvl_train_7.lmdb
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/features/lmdbs/cc_vinvl_train_8.lmdb
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/features/lmdbs/cc_vinvl_train_9.lmdb
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/features/lmdbs/cc_vinvl_train_10.lmdb
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/features/lmdbs/cc_vinvl_train_11.lmdb
+        val:
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/features/lmdbs/cc_vinvl_val.lmdb
+        test:
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/features/lmdbs/cc_vinvl_val.lmdb
+      annotations:
+        train:
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/annotations/train_cc_0.npy
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/annotations/train_cc_1.npy
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/annotations/train_cc_2.npy
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/annotations/train_cc_3.npy
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/annotations/train_cc_4.npy
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/annotations/train_cc_5.npy
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/annotations/train_cc_6.npy
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/annotations/train_cc_7.npy
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/annotations/train_cc_8.npy
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/annotations/train_cc_9.npy
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/annotations/train_cc_10.npy
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/annotations/train_cc_11.npy
+        val:
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/annotations/val_vinvl_itm_fixed.npy
+        test:
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/annotations/val_vinvl_itm_fixed.npy
     processors:
       masked_token_processor:
         type: masked_token
@@ -190,38 +187,42 @@ dataset_config:
     two_sentence: false
     use_image_feature_masks: true
     features:
-      # train:
-      # - cc/defaults/features/lmdbs/cc_vinvl_train_0.lmdb
-      # - cc/defaults/features/lmdbs/cc_vinvl_train_1.lmdb
-      # - cc/defaults/features/lmdbs/cc_vinvl_train_2.lmdb
-      # - cc/defaults/features/lmdbs/cc_vinvl_train_3.lmdb
-      # - cc/defaults/features/lmdbs/cc_vinvl_train_6.lmdb
-      # - cc/defaults/features/lmdbs/cc_vinvl_train_7.lmdb
-      # - cc/defaults/features/lmdbs/cc_vinvl_train_8.lmdb
-      # - cc/defaults/features/lmdbs/cc_vinvl_train_9.lmdb
-      train:
-      - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/features/lmdbs/cc_vinvl_val.lmdb
-      val:
-      - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/features/lmdbs/cc_vinvl_val.lmdb
-      test:
-      - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/features/lmdbs/cc_vinvl_val.lmdb
-    annotations:
-      # train:
-      # - cc/defaults/annotations/train_vinvl_sbert_cc_0.npy
-      # - cc/defaults/annotations/train_vinvl_sbert_cc_1.npy
-      # - cc/defaults/annotations/train_vinvl_sbert_cc_2.npy
-      # - cc/defaults/annotations/train_vinvl_sbert_cc_3.npy
-      # - cc/defaults/annotations/train_vinvl_sbert_cc_6.npy
-      # - cc/defaults/annotations/train_vinvl_sbert_cc_7.npy
-      # - cc/defaults/annotations/train_vinvl_sbert_cc_8.npy
-      # - cc/defaults/annotations/train_vinvl_sbert_cc_9.npy
-      # - cc/defaults/annotations/train_vinvl_sbert_retrieved_sorted_all_nps_cs_mini_fixed.npy
-      train:
-      - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/annotations/val_vinvl_itm_fixed.npy
-      val:
-      - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/annotations/val_vinvl_itm_fixed.npy
-      test:
-      - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/annotations/val_vinvl_itm_fixed.npy
+      features:
+        train:
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/features/lmdbs/cc_vinvl_train_0.lmdb
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/features/lmdbs/cc_vinvl_train_1.lmdb
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/features/lmdbs/cc_vinvl_train_2.lmdb
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/features/lmdbs/cc_vinvl_train_3.lmdb
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/features/lmdbs/cc_vinvl_train_4.lmdb
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/features/lmdbs/cc_vinvl_train_5.lmdb
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/features/lmdbs/cc_vinvl_train_6.lmdb
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/features/lmdbs/cc_vinvl_train_7.lmdb
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/features/lmdbs/cc_vinvl_train_8.lmdb
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/features/lmdbs/cc_vinvl_train_9.lmdb
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/features/lmdbs/cc_vinvl_train_10.lmdb
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/features/lmdbs/cc_vinvl_train_11.lmdb
+        val:
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/features/lmdbs/cc_vinvl_val.lmdb
+        test:
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/features/lmdbs/cc_vinvl_val.lmdb
+      annotations:
+        train:
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/annotations/train_cc_0.npy
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/annotations/train_cc_1.npy
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/annotations/train_cc_2.npy
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/annotations/train_cc_3.npy
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/annotations/train_cc_4.npy
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/annotations/train_cc_5.npy
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/annotations/train_cc_6.npy
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/annotations/train_cc_7.npy
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/annotations/train_cc_8.npy
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/annotations/train_cc_9.npy
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/annotations/train_cc_10.npy
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/annotations/train_cc_11.npy
+        val:
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/annotations/val_vinvl_itm_fixed.npy
+        test:
+        - /data/zmykevin/fb_intern/data/mmf_data/datasets/cc/defaults/annotations/val_vinvl_itm_fixed.npy
     processors:
       masked_token_processor:
         type: masked_token
@@ -267,13 +268,3 @@ training:
 evaluation:
   metrics:
   - accuracy
-
-# multitasking:
-#   enabled: true
-#   type: ratios
-#   params:
-#     sampling_ratios:
-#       masked_conceptual_captions: 0.3
-#       itm_conceptual_captions: 0.2
-#       masked_conceptual_captions_image_tag: 0.3
-#       masked_conceptual_captions_image_phrase: 0.2

@@ -319,11 +319,6 @@ class VisualBERTForPretraining(nn.Module):
                 ),
             )
         
-        # self.cls_seq = deepcopy(bert_masked_lm.cls.seq_relationship)
-        # #self.cls_pred = BertLMPredictionHead(self.bert.config)
-        # self.cls_pred = deepcopy(bert_masked_lm.cls.predictions)
-        
-        #self.cls_pred = nn.Linear(3,2)
         self.cls = BertOnlyMLMHead(self.bert.config, self.bert.embeddings.word_embeddings.weight)
         #load the weights of cls
         load_output_header(self.cls, bert_masked_lm)
@@ -408,38 +403,6 @@ class VisualBERTForPretraining(nn.Module):
             visual_tag_box,
             box,
         )
-
-        #################Save the attetion########################
-        # print(attention_weights[0][0].size())
-        # output_attn_weights = [x.cpu().detach().numpy() for x in attention_weights[0]] 
-        # output_input_ids = input_ids.cpu().detach().numpy()
-        # output_input_mask = input_mask.cpu().detach().numpy()
-        # output_box = box.cpu().detach().numpy()
-        # num_boxes = np.array(num_boxes)
-
-        # output_path = "/home/zmykevin/fb_intern/data/attention_viz/mu_vla"
-        # attn_path = os.path.join(output_path, "attention_weights_{}.npy".format(loaded_batch))
-        # input_ids_path = os.path.join(output_path, "input_ids_{}.npy".format(loaded_batch))
-        # input_masks_path = os.path.join(output_path, "input_masks_{}.npy".format(loaded_batch))
-        # input_bbox_path = os.path.join(output_path, "input_bbox_{}.npy".format(loaded_batch))
-        # input_num_boxes = os.path.join(output_path, "input_numboxes_{}.npy".format(loaded_batch))
-
-        # with open(attn_path, "wb") as f:
-        #     np.save(f, output_attn_weights)
-
-        # with open(input_ids_path, "wb") as f:
-        #     np.save(f, output_input_ids)
-        
-        # with open(input_masks_path, "wb") as f:
-        #     np.save(f, output_input_mask)
-
-        # with open(input_bbox_path, "wb") as f:
-        #     np.save(f, output_box)
-
-        # with open(input_num_boxes, "wb") as f:
-        #     np.save(f, num_boxes)
-        # return
-        ##########################################################
         
         #print(pooled_output)
         output_dict: Dict[str, Tensor] = {}
@@ -462,7 +425,6 @@ class VisualBERTForPretraining(nn.Module):
             output_dict["logits"] = prediction_scores
 
             if self.config.itm_filtering and (current_epoch >= self.config.itm_filtering_start_epoch) and not disable_itm_filtering:
-                # print("itm_filtering_starts")
                 with torch.no_grad():
                     seq_relationship_score = self.itm_cls(pooled_output)
                     psudo_matched_label = torch.ones_like(seq_relationship_score[:,0])
@@ -480,15 +442,10 @@ class VisualBERTForPretraining(nn.Module):
                     masked_lm_labels.contiguous().view(-1),
                 )
 
-            # print(masked_lm_loss)
-
             output_dict["masked_lm_loss"] = masked_lm_loss
             output_dict["loss"] = masked_lm_loss
 
         #Add a visual_prediction output scores for mrtm
-        # print(mrtm_labels)
-        # print(masked_image_labels)
-        # print(self.config.task_mrtm)
         if masked_image_labels is not None and mrtm_labels is not None and self.config.task_mrtm:
             visn_output = sequence_output[:,-masked_image_labels.size(1):]
             prediction_scores = self.cls(visn_output)
@@ -691,42 +648,6 @@ class VisualBERTForClassification(nn.Module):
             visual_tag_box,
             box,
         )
-        # print(sequence_output.size()) #print the masekd label
-        # print(input_mask.size())
-        # print(input_mask[0,:])
-        # print(num_boxes)
-        # print(len(num_boxes))
-        
-        ########################NMI Output######################
-        # with torch.no_grad():
-        #     #print(sequence_output.size()) 
-        #     #convert sequence_output to npy
-        #     all_hiddens = sequence_output.cpu().detach().numpy()
-        #     input_mask_sum = np.sum(input_mask.cpu().detach().numpy(),axis=1)
-        #     num_boxes = np.array(num_boxes)
-        #     # print(input_mask_sum)
-        #     # print(num_boxes)
-            
-        #     #Save the all_hiddens, input_mask_sum, and num_boxes
-        #     output_path=self.config.seq_output_path
-        #     if not os.path.exists(output_path):
-        #         os.makedirs(output_path)
-
-
-        #     hidden_path = os.path.join(output_path, "hidden_{}.npy".format(loaded_batch))
-        #     valid_text_path = os.path.join(output_path, "text_val_{}.npy".format(loaded_batch))
-        #     valid_image_path = os.path.join(output_path, "image_val_{}.npy".format(loaded_batch))
-
-        #     with open(hidden_path, "wb") as f:
-        #         np.save(f,all_hiddens)
-            
-        #     with open(valid_text_path, "wb") as f:
-        #         np.save(f,input_mask_sum)
-
-        #     with open(valid_image_path, "wb") as f:
-        #         np.save(f,num_boxes)
-
-        ########################################################
 
         #input_mask is the input mask for input_ids
         if self.training_head_type == "refcoco":
@@ -746,25 +667,6 @@ class VisualBERTForClassification(nn.Module):
             #print(logits)
             reshaped_logits = logits.contiguous().view(-1, self.num_labels)
             output_dict["scores"] = reshaped_logits
-            ##################################################################
-            
-            #Implement the  Triplet Loss
-            #logits = self.itm_cls(pooled_output)[:,1:]
-            # logits = self.itm_cls(pooled_output)
-            # rank_scores_sigmoid = torch.sigmoid(logits)
-            # #print(rank_scores_sigmoid.size())
-            # if len(rank_scores_sigmoid.size()) > 2:
-            #     scores = rank_scores_sigmoid.contiguous().view(-1, 3)
-            #     pos = scores[:, :1]
-            #     neg = scores[:, 1:]
-            #     rank_loss = torch.clamp(self.margin + neg - pos, 0).mean()
-            #     #print(rank_loss)
-            #     output_dict["rank_loss"] = rank_loss
-            #     output_dict["scores"] = rank_scores_sigmoid       
-            # else:
-            #     #Create a  fake rank loss for val and test
-            #     output_dict["rank_loss"] = torch.zeros_like(logits).mean()
-            #     output_dict["scores"] = logits.contiguous().view(-1, self.num_labels)
         else:
             if self.training_head_type == "nlvr2":
                 # 2B * H => B * 2H
@@ -978,16 +880,6 @@ class VisualBERT(BaseModel):
 
             if not torch.jit.is_scripting():
                 image_info = getattr(sample_list, "image_info_0", {})
-                ####################Dump Image ID####################################
-                # A = getattr(image_info, "image_id")
-                # A.sort()
-                # print(A)
-                # with open("/home/zmykevin/fb_intern/data/attention_viz/mu_vla/image_ids_{}.json".format(loaded_batch), "w") as f:
-                #     json.dump(getattr(image_info,"image_id"), f)
-                # with open("/fsx/zmykevin/experiments/attention_viz/mu_vla_bc/image_ids.json", "w") as f:
-                #     json.dump(getattr(image_info,"image_id"), f)
-                #####################################################################
-
                 image_bbox = getattr(image_info, "bbox", None)
                 #get the number of bbox
                 image_numboxes = getattr(image_info, "num_boxes", None)
@@ -1017,11 +909,6 @@ class VisualBERT(BaseModel):
         sample_list["image_labels"] = bert_image_labels
         sample_list["visual_tag_box"] = bert_visual_tag_box
         sample_list["bbox"] = image_bbox
-        #print(sample_list["image_labels"])
-        #Add the image labels
-        # max_features = torch.tensor(
-        #     image_feat_variable.shape[1], dtype=torch.int
-        # ).to(device)
         max_features = torch.tensor(
             image_feat_variable.shape[1], dtype=torch.int
         )
@@ -1076,28 +963,19 @@ class VisualBERT(BaseModel):
             for num_box in sample_list["num_boxes"]:
                 object_masks.append(torch.tensor([0]*num_box+[1]*(visual_embeddings.size(1)-num_box), dtype=torch.bool, device=visual_embeddings.device))
             object_masks = torch.stack(object_masks, dim=0)
-            # print(type(sample_list["num_boxes"]))
-            # print(object_masks.size())
 
             sample_list["object_mask"] = object_masks
-        # image_feat_variable = batch x ( num_choice x ) image_feature_length x dim
         # Prepare Mask
         image_mask = torch.arange(
             visual_embeddings.size(-2), device=visual_embeddings.device
         ).expand(visual_embeddings.size()[:-1])
-        #print(image_dim)
-        #print(image_mask.size())
 
         if len(image_dim.size()) < len(image_mask.size()):
             if len(image_mask.size()) == 2:
                 image_dim = image_dim.unsqueeze(-1)
             elif len(image_mask.size()) == 3:
                 image_dim = image_dim.unsqueeze(-1).expand(-1,3).unsqueeze(-1)
-            # print(image_dim.size())
-            # print(image_mask.size())
             assert len(image_dim.size()) == len(image_mask.size())
-        # print(image_mask.size())
-        # print(image_mask)
         image_mask = image_mask < image_dim
         # print(image_mask)
         sample_list["image_mask"] = image_mask.long()
@@ -1124,11 +1002,6 @@ class VisualBERT(BaseModel):
         sample_list = self.flatten_for_bert(sample_list)
         sample_list = self.add_post_flatten_params(sample_list)
         
-        # print("loaded batch is:")
-        # print(loaded_batch)
-        # If task_matched is activated masked_lm_labels
-        # if self.config.task_matched:
-        #     sample_list.pop("masked_lm_labels")
         if "itm" not in sample_list["dataset_name"] and sample_list["dataset_name"] != "masked_conceptual_captions_image":
             disable_itm = True 
         else:
@@ -1185,12 +1058,6 @@ class VisualBERT(BaseModel):
                     # print(output_dict["matched_loss"])
                     output_dict["losses"][loss_key + "/mrtm_loss"] = output_dict.pop("mrtm_loss")
 
-                # print(output_dict["losses"])
             else:
                 raise RuntimeError("Pretraining head can't be used in script mode.")
-        # if self.training_head_type == "itm_flickr30k":
-        #     loss_key = "{}".format(sample_list["dataset_name"])
-        #     output_dict["losses"] = {}
-        #     output_dict["losses"][loss_key+"/rank_loss"] = output_dict.pop("rank_loss")
-        #print(output_dict["loss"])
         return output_dict

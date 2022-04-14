@@ -66,6 +66,7 @@ training:
   lr_scheduler: true
   clip_gradients: true
   max_grad_l2_norm: 2.0
+  tensorboard: true
   # Don't forget to update schedule_attributes if you update this
   find_unused_parameters: true
   max_updates: 20000
