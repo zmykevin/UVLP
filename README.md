@@ -56,7 +56,7 @@ training.fp16=True
 ```
 ### RefCOCO+
 **Download data**
-Download the refcoco+ dataset from this [link]().(TODO: Add the REFCOCO link after uploading the data.)
+Download the refcoco+ dataset from this [link](https://drive.google.com/file/d/1oRLqVRTeE54b6T8xedbEiGcqKnOAH6Vm/view?usp=sharing).
 Change the config file's dataset repository based on your save path for the downloaded data. 
 
 **Finetuning**
